@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.loveLight.AccountMapper">
+<mapper namespace="com.loveLight.mapper.AccountMapper">
 
  <select id="login" parameterType="com.loveLight.entity.Account" resultType = "String">
   	SELECT
@@ -12,5 +12,15 @@
   	WHERE
   		useaname = #{username} and PASSWORD = #{password}
   </select>
+  
+  <insert id="insertAll" parameterType="com.loveLight.entity.Account">
+  	INSERT INTO 
+  		accounts (username,password,question,answer,name,sex,high,area) 
+  	VALUES
+  		(#{username}, #{password}, #{question}, 
+  		#{answer}, #{name}, #{sex},#{high},#{area})
+  
+  
+  </insert>
   
  </mapper>
