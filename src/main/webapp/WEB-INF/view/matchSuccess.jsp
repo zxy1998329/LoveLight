@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/findPassWord/match" method="post">
-		输入验证码：<input name="inputNum"/>
+	<form action="/findPassWord/reset" method="POST">
+		输入新密码<input name="newPassWord"/>
 		<input type="submit" value="提交">
 	</form>
 </body>

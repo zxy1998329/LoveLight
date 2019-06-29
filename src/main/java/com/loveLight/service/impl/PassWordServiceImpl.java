@@ -1,14 +1,23 @@
 package com.loveLight.service.impl;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
 
+import com.loveLight.mapper.AccountMapper;
 import com.loveLight.service.PassWordService;
 
 @Service
 public class PassWordServiceImpl implements PassWordService {
 
+	@Autowired
+	private AccountMapper accountMapper;
+	
+	
 	@Override
 	public String sendEmail(String email) {
 		String randomNum = createRandomNum(6);// 随机生成6位数的验证码
@@ -42,5 +51,27 @@ public class PassWordServiceImpl implements PassWordService {
 		}
 		return randomNumStr;
 	}
+	
+	public boolean emailMatch(String submit,String num) {
+		
+		if(submit.equals(num))
+			return true;
+		else
+			return false;
+	}
 
+	
+	public boolean reset(String newPassWord,String account) {
+		
+		Map<String, String>parameter = new HashMap<String, String>();
+		parameter.put("account", account);
+		parameter.put("newPassWord",newPassWord);
+		int i = accountMapper.reset(parameter);
+		if(i>0)
+			return true;
+		else 
+			return false;
+		
+		
+	}
 }

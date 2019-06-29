@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/findPassWord/match" method="post">
-		输入验证码：<input name="inputNum"/>
-		<input type="submit" value="提交">
-	</form>
+
 </body>
 </html>

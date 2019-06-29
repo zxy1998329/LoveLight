@@ -16,12 +16,12 @@ import com.loveLight.service.PassWordService;
 
 @Controller
 @RequestMapping(value = "/findPassWord") // url首先判断是否匹配findPassWord，然后再用之后的路径匹配方法的映射value
-public class FindPassWord {
+public class FindPassWordController {
 
 	@Autowired
 	private PassWordService passWordService;
 	
-	@RequestMapping(value = "", method = RequestMethod.POST)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public String findPage() {
 		return "findPassWord";
 	}
@@ -32,14 +32,35 @@ public class FindPassWord {
 	}
 
 	@RequestMapping(value = "/sendEmail", method = RequestMethod.POST)
-	public String sendEmail(@RequestParam("email") String email, HttpSession session) {
+	public String sendEmail(@RequestParam("email") String email, @RequestParam("account")String account,HttpSession session) {
 		
 		String num = passWordService.sendEmail(email);
 		session.setAttribute("randomNum", num);
-		
+		session.setAttribute("account",account);
 		return "emailMatch";
 	}
-
 	
-
+	@RequestMapping(value = "/match",method = RequestMethod.POST)
+	public String match(@RequestParam("inputNum") String inputNum, HttpSession session) {
+		
+		String randomNum = (String) session.getAttribute("randomNum");
+		if(passWordService.emailMatch(inputNum,randomNum)) {
+			System.out.println("suucess!");
+			return "matchSuccess";
+		}
+		else {
+			System.out.println("fail!");
+			return "matchFail";
+		}
+	}
+	
+	@RequestMapping(value = "/reset",method = RequestMethod.POST)
+	public String reset(@RequestParam("newPassWord") String newPassWord,HttpSession session) {
+		
+		if(passWordService.reset(newPassWord,(String)session.getAttribute("account")))
+			return "login";
+		else 
+			return "resetFail";
+	
+	}
 }

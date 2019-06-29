@@ -23,4 +23,13 @@
   
   </insert>
   
+  <update id="reset">
+  	update
+  		accounts
+  	set
+  		password=#{newPassWord}
+  	where
+  		username=#{account}
+  </update>
+  
  </mapper>

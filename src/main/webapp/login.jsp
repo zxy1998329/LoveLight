@@ -1,18 +1,5 @@
 ﻿<html>
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<form action="/findPassWrod" method="post">
-		<input type="submit" value="通过手机短信找回密码"/>
-	</form>
-</body>
-</html>
-=======
 <html lang="en" class="no-js">
 
     <head>
@@ -55,7 +42,7 @@
                 <pre>                                               </pre>
                 <a class="connect" href="/register"><span style="font-size: 20px;">注册新用户</span></a>
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <a class="connect"href=""><span style="font-size: 20px;">忘记密码？</span></a>
+                <a class="connect"href="http://localhost:8080/findPassWord"><span style="font-size: 20px;">忘记密码？</span></a>
                 <div class="error"><span>+</span></div>
             </form>
 <!--             <div class="connect">
@@ -76,5 +63,3 @@
     </body>
 
 </html>
-
->>>>>>> refs/heads/dev
