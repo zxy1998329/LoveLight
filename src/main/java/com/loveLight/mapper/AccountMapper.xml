@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.loveLight.AccountMapper">
+<mapper namespace="com.loveLight.mapper.AccountMapper">
 
  <select id="login" parameterType="com.loveLight.entity.Account" resultType = "String">
   	SELECT
@@ -10,7 +10,7 @@
   	FROM
   		accounts
   	WHERE
-  		useaname = #{username} and PASSWORD = #{password}
+  		username = #{username} and PASSWORD = #{password}
   </select>
   
  </mapper>
