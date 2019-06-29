@@ -16,12 +16,12 @@ public class RegisterController {
 	@Autowired
 	private RegisterService registerService;
 	
-	@RequestMapping(value = "/registercontroller", method = RequestMethod.GET)
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	String registerPage() {
 		return "register";
 	}
 	
-	@RequestMapping(value = "/registercontroller", method = RequestMethod.POST)
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	String register(Account account) {
 		registerService.insertAccount(account);
 		return "redirect:login.jsp";
