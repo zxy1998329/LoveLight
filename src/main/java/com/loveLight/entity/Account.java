@@ -2,7 +2,7 @@ package com.loveLight.entity;
 
 public class Account {
 	
-	private String account;
+	private String username;
 	private String password;
 	private String question;//密保问题
 	private String answer;//密保答案
@@ -10,13 +10,12 @@ public class Account {
 	private String sex; //F 女性----M  男性
 	private Integer high;
 	private String area;
-	
-	
-	public String getAccount() {
-		return account;
+
+	public String getUsername() {
+		return username;
 	}
-	public void setAccount(String account) {
-		this.account = account;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getPassword() {
 		return password;
@@ -60,6 +59,12 @@ public class Account {
 	public void setArea(String area) {
 		this.area = area;
 	}
+	@Override
+	public String toString() {
+		return "Account [username=" + username + ", password=" + password + ", question=" + question + ", answer="
+				+ answer + ", name=" + name + ", sex=" + sex + ", high=" + high + ", area=" + area + "]";
+	}
+
 	
 	
 }
