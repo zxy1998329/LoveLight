@@ -148,6 +148,18 @@
 			<artifactId>logback-access</artifactId>
 			<version>1.2.3</version>
 		</dependency>
+		
+		<!-- 用于邮箱 -->
+		<dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>4.3.24.RELEASE</version>
+        </dependency>
 
 	</dependencies>
 	<build>
