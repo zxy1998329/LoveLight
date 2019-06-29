@@ -4,11 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>主页</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<form action="/findPassWord" method="post">
-		<input type="submit" value="找回密码"/>
+	<form action="/findPassWord/reset" method="POST">
+		输入新密码<input name="newPassWord"/>
+		<input type="submit" value="提交">
 	</form>
 </body>
 </html>
