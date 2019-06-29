@@ -27,7 +27,7 @@ public class LoginController {
 		
 		String row1 ;
 		row1 = loginService1.login(account);
-		System.out.println(row1);
+		
 		if(row1!=null) {
 			session.setAttribute("username", row1);
 			return "homePage";

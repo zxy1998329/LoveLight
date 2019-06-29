@@ -16,7 +16,7 @@ public class LoginServiceimpl implements LoginService{
 	@Override
 	public String login(Account account) {
 		
-		return accountMapper.login(account);
+		return accountMapper.findAccount(account);
 	}
 	
 }

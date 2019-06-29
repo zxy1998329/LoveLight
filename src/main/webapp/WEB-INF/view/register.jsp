@@ -29,7 +29,7 @@
     <body>
 
         <div class="page-container">
-            <h1>注册，<span style="color:red; font-style: ">寻找<span style="font-size:40px;">爱</span></span></h1>
+            <h1><span style="color:red; font-style: ">寻找<span style="font-size:40px;">爱</span></span></h1>
             <form action="register" method="post">
                 <input type="text" name="username" class="username" placeholder="请输入您的用户名！">
                 <input type="text" name="name" class="username" placeholder="请输入您的昵称！">

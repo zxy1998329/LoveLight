@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.loveLight.mapper.AccountMapper">
 
- <select id="login" parameterType="com.loveLight.entity.Account" resultType = "String">
+ <select id="findAccount" parameterType="com.loveLight.entity.Account" resultType = "String">
   	SELECT
   		username
   	FROM
