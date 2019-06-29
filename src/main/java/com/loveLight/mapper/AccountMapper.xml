@@ -13,4 +13,14 @@
   		username = #{username} and PASSWORD = #{password}
   </select>
   
+  <insert id="insertAll" parameterType="com.loveLight.entity.Account">
+  	INSERT INTO 
+  		accounts (username,password,question,answer,name,sex,high,area) 
+  	VALUES
+  		(#{username}, #{password}, #{question}, 
+  		#{answer}, #{name}, #{sex},#{high},#{area})
+  
+  
+  </insert>
+  
  </mapper>

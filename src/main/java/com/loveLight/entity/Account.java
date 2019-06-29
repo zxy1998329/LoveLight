@@ -10,9 +10,7 @@ public class Account {
 	private String sex; //F 女性----M  男性
 	private Integer high;
 	private String area;
-	
-	
-	
+
 	public String getUsername() {
 		return username;
 	}
@@ -66,6 +64,7 @@ public class Account {
 		return "Account [username=" + username + ", password=" + password + ", question=" + question + ", answer="
 				+ answer + ", name=" + name + ", sex=" + sex + ", high=" + high + ", area=" + area + "]";
 	}
+
 	
 	
 }

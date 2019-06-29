@@ -18,7 +18,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String get() {
-		return "login";
+		return "login.jsp";
 	}
 	
 	
@@ -28,8 +28,14 @@ public class LoginController {
 		String row1 ;
 		row1 = loginService1.login(account);
 		System.out.println(row1);
+		if(row1!=null) {
+			session.setAttribute("username", row1);
+			return "homePage";
+		}
+		else {
+			return "redirect:login.jsp";
+		}
 		
-		return "homePage";
 		
 			
 		
