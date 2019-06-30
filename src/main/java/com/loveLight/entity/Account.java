@@ -10,7 +10,15 @@ public class Account {
 	private String sex; //F 女性----M  男性
 	private Integer high;
 	private String area;
-
+	private Integer role;//角色/权限
+	
+	
+	public Integer getRole() {
+		return role;
+	}
+	public void setRole(Integer role) {
+		this.role = role;
+	}
 	public String getUsername() {
 		return username;
 	}
@@ -62,7 +70,8 @@ public class Account {
 	@Override
 	public String toString() {
 		return "Account [username=" + username + ", password=" + password + ", question=" + question + ", answer="
-				+ answer + ", name=" + name + ", sex=" + sex + ", high=" + high + ", area=" + area + "]";
+				+ answer + ", name=" + name + ", sex=" + sex + ", high=" + high + ", area=" + area + ", role=" + role
+				+ "]";
 	}
 
 	

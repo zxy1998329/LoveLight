@@ -23,6 +23,15 @@
   
   </insert>
   
+  <select id="updateByRole" parameterType="String" resultType = "com.loveLight.entity.Account">
+ 	update
+ 		accounts
+ 	set
+  		role = 2
+  	WHERE
+  		username = #{username}
+  </select>
+  
   <update id="reset">
   	update
   		accounts

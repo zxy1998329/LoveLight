@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>hello ${sessionScope.username }</h1>
-<form action = "/recharge" method = "post">
+	<form action = "/recharge" method = "post">
 	<button type="submit" class="submit_button">充值会员</button>
 	</form>
 	

@@ -14,4 +14,6 @@ public interface AccountMapper {
 	int insertAll(Account account);		//注册的时候插入账号的所有信息
 
 	int reset(Map<String, String>parameter);
+	
+	Account updateByRole(String username);
 }
