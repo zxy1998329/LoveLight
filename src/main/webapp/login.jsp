@@ -42,7 +42,7 @@
                 <pre>                                               </pre>
                 <a class="connect" href="/register"><span style="font-size: 20px;">注册新用户</span></a>
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <a class="connect"href="http://localhost:8080/findPassWord"><span style="font-size: 20px;">忘记密码？</span></a>
+                <a class="connect"href="http://localhost:8080/findPassWord/email"><span style="font-size: 20px;">忘记密码？</span></a>
                 <div class="error"><span>+</span></div>
             </form>
 <!--             <div class="connect">
