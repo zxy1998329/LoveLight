@@ -18,4 +18,10 @@ public class VipServiceImpl implements VipService{
 		return accountmapper.updateByRole(username);
 	}
 
+	@Override
+	public Account getAccount(String username) {
+		
+		return accountmapper.findByUsername(username);
+	}
+
 }

@@ -16,4 +16,6 @@ public interface AccountMapper {
 	int reset(Map<String, String>parameter);
 	
 	Account updateByRole(String username);
+	
+	Account findByUsername(String username);
 }

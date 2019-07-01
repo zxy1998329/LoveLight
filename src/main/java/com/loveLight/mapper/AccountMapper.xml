@@ -29,7 +29,7 @@
  	set
   		role = 2
   	WHERE
-  		username = #{username}
+  		username = #{username} 
   </select>
   
   <update id="reset">
@@ -40,5 +40,14 @@
   	where
   		username=#{account}
   </update>
+  
+  <select id="findByUsername" parameterType="String" resultType = "com.loveLight.entity.Account">
+  	select
+ 		username,role
+ 	from
+  		accounts
+  	WHERE
+  		username = #{username} 
+  </select>
   
  </mapper>
