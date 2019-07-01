@@ -8,6 +8,8 @@ import com.loveLight.entity.Account;
 
 public interface RegisterService {
 	
-	int insertAccount(Account account);
+	int insertAccount(Account account);		//插入一条账号数据
+	
+	int updateAccount(Account account);		//更新一条账号数据
 	
 }

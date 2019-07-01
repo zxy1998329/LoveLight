@@ -30,7 +30,12 @@ public class LoginController {
 		
 		if(row1!=null) {
 			session.setAttribute("username", row1);
+<<<<<<< HEAD
 			return "homePage";  //测试匹配功能 做的修改
+=======
+			session.setAttribute("reset", 1);
+			return "homePage";
+>>>>>>> branch 'dev' of https://github.com/zxy1998329/LoveLight.git
 		}
 		else {
 			return "redirect:login.jsp";

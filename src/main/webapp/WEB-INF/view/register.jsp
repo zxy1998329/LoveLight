@@ -93,7 +93,7 @@
                 <input type="text"style="margin-top: 5px;" name="question"  placeholder="请输入您的密保问题！">
                 <input type="text"style="margin-top: 5px;" name="answer" " placeholder="请输入您的密保答案！">      
                 <input type="password"style="margin-top: 5px;" name="password" class="password" placeholder="请输入您的用户密码！">
-                <input type="password"style="margin-top: 5px;" name="password" class="password" placeholder="请确认您的用户密码！">
+                <input type="password"style="margin-top: 5px;" name="" class="password" placeholder="请确认您的用户密码！">
 <!--                  <input type="combobox" class="combobox" name="combobox" class="combobox" placeholder="请输入验证码！">  -->
                 <button type="submit"style="margin-top: 5px;" class="submit_button">注册</button>
                 <div class="error"><span>+</span></div>
