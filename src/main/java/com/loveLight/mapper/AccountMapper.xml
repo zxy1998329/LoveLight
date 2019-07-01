@@ -41,7 +41,7 @@
   		username=#{account}
   </update>
   
-<<<<<<< HEAD
+
   <select id="findByHigh" resultType="com.loveLight.entity.Account">
   	select
   		username,
@@ -129,7 +129,7 @@
 	where 
 		accounts.username=#{value}
   </select>
-=======
+
 
   <select id="findAccountInfoByUsername" parameterType="string" resultType="com.loveLight.entity.Account" >
   	select 
@@ -165,5 +165,4 @@
   </select>
   
 
->>>>>>> branch 'dev' of https://github.com/zxy1998329/LoveLight.git
  </mapper>

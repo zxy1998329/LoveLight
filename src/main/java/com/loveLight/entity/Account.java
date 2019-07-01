@@ -10,11 +10,10 @@ public class Account {
 	private String sex; //F 女性----M  男性
 	private Integer high;
 	private String area;
-<<<<<<< HEAD
 	
 	private AccountExtend accountExtend;
 
-=======
+
 	private Integer role;//角色/权限
 	
 	
@@ -24,7 +23,6 @@ public class Account {
 	public void setRole(Integer role) {
 		this.role = role;
 	}
->>>>>>> branch 'dev' of https://github.com/zxy1998329/LoveLight.git
 	public String getUsername() {
 		return username;
 	}
@@ -85,14 +83,11 @@ public class Account {
 	@Override
 	public String toString() {
 		return "Account [username=" + username + ", password=" + password + ", question=" + question + ", answer="
-<<<<<<< HEAD
 				+ answer + ", name=" + name + ", sex=" + sex + ", high=" + high + ", area=" + area + ", accountExtend="
-				+ accountExtend + "]";
-=======
-				+ answer + ", name=" + name + ", sex=" + sex + ", high=" + high + ", area=" + area + ", role=" + role
-				+ "]";
->>>>>>> branch 'dev' of https://github.com/zxy1998329/LoveLight.git
+				+ accountExtend + ", role=" + role + "]";
 	}
+	
+	
 	
 	
 
