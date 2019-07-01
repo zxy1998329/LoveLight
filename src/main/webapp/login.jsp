@@ -37,7 +37,7 @@
             <form action="/login" method="post">
                 <input type="text" name="username" class="username" placeholder="请输入您的用户名！">
                 <input type="password" name="password" class="password" placeholder="请输入您的用户密码！">
-<!--                  <input type="combobox" class="combobox" name="combobox" class="combobox" placeholder="请输入验证码！">  -->
+                
                 <button type="submit" class="submit_button">登录</button>
                 <pre>                                               </pre>
                 <a class="connect" href="/register"><span style="font-size: 20px;">注册新用户</span></a>
@@ -45,14 +45,11 @@
                 <a class="connect"href="http://localhost:8080/findPassWord/email"><span style="font-size: 20px;">忘记密码？</span></a>
                 <div class="error"><span>+</span></div>
             </form>
-<!--             <div class="connect">
-    <p>快捷登录</p>
     <p>
         <a class="facebook" href=""></a>
         <a class="twitter" href=""></a>
     </p>
-</div> -->
-        </div>
+</div> 
 		
         <!-- Javascript -->
         <script src="assets/js/jquery-1.8.2.min.js" ></script>

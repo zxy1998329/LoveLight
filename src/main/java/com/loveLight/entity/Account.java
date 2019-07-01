@@ -10,6 +10,8 @@ public class Account {
 	private String sex; //F 女性----M  男性
 	private Integer high;
 	private String area;
+	
+	private AccountExtend accountExtend;
 
 	public String getUsername() {
 		return username;
@@ -59,11 +61,23 @@ public class Account {
 	public void setArea(String area) {
 		this.area = area;
 	}
+	
+	
+	
+	public AccountExtend getAccountExtend() {
+		return accountExtend;
+	}
+	public void setAccountExtend(AccountExtend accountExtend) {
+		this.accountExtend = accountExtend;
+	}
 	@Override
 	public String toString() {
 		return "Account [username=" + username + ", password=" + password + ", question=" + question + ", answer="
-				+ answer + ", name=" + name + ", sex=" + sex + ", high=" + high + ", area=" + area + "]";
+				+ answer + ", name=" + name + ", sex=" + sex + ", high=" + high + ", area=" + area + ", accountExtend="
+				+ accountExtend + "]";
 	}
+	
+	
 
 	
 	

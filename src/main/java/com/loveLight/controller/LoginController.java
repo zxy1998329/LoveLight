@@ -30,7 +30,7 @@ public class LoginController {
 		
 		if(row1!=null) {
 			session.setAttribute("username", row1);
-			return "homePage";
+			return "homePage";  //测试匹配功能 做的修改
 		}
 		else {
 			return "redirect:login.jsp";
