@@ -15,13 +15,22 @@
   
   <insert id="insertAll" parameterType="com.loveLight.entity.Account">
   	INSERT INTO 
-  		accounts (username,password,question,answer,name,sex,high,area) 
+  		accounts (username,password,question,answer,name,sex,high,area,role) 
   	VALUES
   		(#{username}, #{password}, #{question}, 
-  		#{answer}, #{name}, #{sex},#{high},#{area})
+  		#{answer}, #{name}, #{sex},#{high},#{area},0)
   
   
   </insert>
+  
+  <select id="updateByRole" parameterType="String" resultType = "com.loveLight.entity.Account">
+ 	update
+ 		accounts
+ 	set
+  		role = 2
+  	WHERE
+  		username = #{username} 
+  </select>
   
   <update id="reset">
   	update
@@ -32,6 +41,7 @@
   		username=#{account}
   </update>
   
+
   <select id="findAccountInfoByUsername" parameterType="string" resultType="com.loveLight.entity.Account" >
   	select 
   		*
@@ -55,4 +65,15 @@
   		username = #{username}
   </update>
   
+
+  <select id="findByUsername" parameterType="String" resultType = "com.loveLight.entity.Account">
+  	select
+ 		username,role
+ 	from
+  		accounts
+  	WHERE
+  		username = #{username} 
+  </select>
+  
+
  </mapper>

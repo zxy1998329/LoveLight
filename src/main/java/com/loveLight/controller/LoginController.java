@@ -30,6 +30,7 @@ public class LoginController {
 		
 		if(row1!=null) {
 			session.setAttribute("username", row1);
+			session.setAttribute("reset", 1);
 			return "homePage";
 		}
 		else {

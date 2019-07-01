@@ -113,8 +113,8 @@
 						<c:set var="account" scope="page" value="${sessionScope.accountInfo }" ></c:set>
 						<li style="margin-left:10%;margin-top:5%;font-size:18px;">性别:
 						
-						<input type="radio" style="margin-left: 3%" name="sex" ${account.sex != 'M' ? ' checked="checked" ' : ' ' } value="M">男
-						<input style="margin-left: 1%"type="radio" name="sex" ${account.sex != 'F' ? ' checked="checked" ' : ' ' } value="F">女
+						<input type="radio" style="margin-left: 3%" name="sex" ${account.sex eq 'M' ? ' checked="checked" ' : ' ' } value="M">男
+						<input style="margin-left: 1%"type="radio" name="sex" ${account.sex eq 'F' ? ' checked="checked" ' : ' ' } value="F">女
 						</li>
 						<li style="margin-left:10%;margin-top:5%;font-size:18px;">身高:
 							<select style="margin-left: 3%;width: 80px; " name="high">

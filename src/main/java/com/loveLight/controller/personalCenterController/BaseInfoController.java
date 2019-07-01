@@ -23,7 +23,6 @@ public class BaseInfoController {
 	
 	@GetMapping (value="/baseInfo" )
 	public String goingToChangeBaseData(HttpSession session ) {
-		session.setAttribute("username", "ruhua");
 		String username = (String) session.getAttribute("username");	//从session中获取当前用户的username
 		account = accountMapper.findAccountInfoByUsername(username);	//通过username获取用户的基本资料
 		session.setAttribute("accountInfo", account);		//设置session键值对，用户基本信息
