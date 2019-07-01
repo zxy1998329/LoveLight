@@ -32,4 +32,27 @@
   		username=#{account}
   </update>
   
+  <select id="findAccountInfoByUsername" parameterType="string" resultType="com.loveLight.entity.Account" >
+  	select 
+  		*
+  	from
+  		accounts
+  	where
+  		username = #{value}
+  </select>
+  
+  <update id="updateAccount" parameterType="com.loveLight.entity.Account">
+  	update 
+  		accounts
+  	set
+  		password = #{password},
+  		sex = #{sex},
+  		high = #{high},
+  		area = #{area},
+  		question = #{question},
+  		answer = #{answer}
+  	where
+  		username = #{username}
+  </update>
+  
  </mapper>
