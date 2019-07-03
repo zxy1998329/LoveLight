@@ -31,13 +31,13 @@ public class MatchController {
 		
 		List<Account> result = matchService.sysMatch((String) session.getAttribute("username"));//调用服务层的匹配函数
 		model.addAttribute("result", result);
-		return "match/1"; //返回到匹配显示结果页面  
+		return "match/match"; //返回到匹配显示结果页面  
 		
 	}
 	
 	@RequestMapping(value="/byAccount",method=RequestMethod.GET)
 	public String toAccountPage() {
-		return "match/2";
+		return "match/username";
 	}
 	
 	@RequestMapping(value="/finByAccount",method=RequestMethod.POST)
@@ -46,7 +46,7 @@ public class MatchController {
 		List<Account> result = new ArrayList<Account>();
 		result.add(account);
 		model.addAttribute("result", result);
-		return "match/1";
+		return "match/match";
 	}
 	
 	@RequestMapping(value="/finByCon",method=RequestMethod.POST)
@@ -54,6 +54,16 @@ public class MatchController {
 		
 		List<Account> result = matchService.dynamicSearch(high, salary, area);
 		model.addAttribute("result", result);
-		return "match/1";	
+		return "match/match";	
+	}
+	
+	@RequestMapping(value="/toCondition",method=RequestMethod.POST)
+	public String toCondition() {
+		return "match/conditionFind";
+	}
+	
+	@RequestMapping(value="/toUserName",method=RequestMethod.POST)
+	public String toUserName() {
+		return "match/usernameFind";
 	}
 }

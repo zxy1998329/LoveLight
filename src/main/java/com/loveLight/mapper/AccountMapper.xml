@@ -56,7 +56,7 @@
   	where
   		high&gt;#{param1} and high&lt;#{param2} and sex=#{param3}
   	limit
-  		2
+  		1
   </select>
   
   <select id="findByArea" resultType="com.loveLight.entity.Account">
@@ -94,7 +94,7 @@
   	where 
   		edu=#{param1} and sex=#{param2}
   	limit
-  		2
+  		1
   </select>
   
   <resultMap type="com.loveLight.entity.Account" id="resultAccountMap">
@@ -165,4 +165,32 @@
   </select>
   
 
+  <select id="dynamicSearch" resultType = "com.loveLight.entity.Account">
+  	select
+  		select
+  		accounts.username,
+  		accounts.name,
+  		sex,
+  		high,
+  		area,
+  		birthday,
+  		edu,
+  		salary,
+  		introduction
+  	from
+  		accounts left join account_extend
+  	on
+  		accounts.username = account_extend.username 
+	<where>
+		<if test="high!=null">
+			high = #{high}
+		</if>
+		<if test="salary!=null">
+			and salary = #{salary}
+		</if>
+		<if test="area!=null">
+			and area = #{area}
+		</if>	
+	</where>
+  </select>
  </mapper>
