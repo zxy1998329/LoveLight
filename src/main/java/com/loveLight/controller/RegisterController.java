@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.loveLight.entity.Account;
+import com.loveLight.mapper.AccountExtendMapper;
 import com.loveLight.service.RegisterService;
 import com.loveLight.service.impl.RegisterServiceImpl;
 
@@ -21,9 +22,13 @@ public class RegisterController {
 		return "register";
 	}
 	
+	@Autowired
+	private AccountExtendMapper accountExtendMapper;
+	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	String register(Account account) {
 		registerService.insertAccount(account);
+		accountExtendMapper.insertAccountExtend(account.getUsername());
 		return "redirect:login.jsp";
 	}
 	

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.loveLight.mapper.AccountExtendMapper">
+
+<select id="findAccountExtendByUsername" parameterType="String" resultType="com.loveLight.entity.AccountExtend">
+	select *
+	from account_extend
+	where
+		username = #{value}
+	
+</select>
+
+<update id="updateAccountExtend" parameterType="com.loveLight.entity.AccountExtend">
+	update 
+		account_extend
+	set 
+		trueName=#{trueName},
+		birthday=#{birthday},
+		marry=#{marry},
+		edu=#{edu},
+		salary=#{salary},
+		phoneNum=#{phoneNum},
+		introduction=#{introduction}
+	where 
+		username=#{username}
+</update>	
+
+<insert id="insertAccountExtend" parameterType="String">
+	insert into
+		account_extend(username)
+	values
+		(#{value})
+		
+</insert>
+
+</mapper>

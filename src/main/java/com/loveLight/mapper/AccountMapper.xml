@@ -104,7 +104,9 @@
   	<result property="high" column="high"/>
   	<result property="area" column="area"/>
   	<association property="accountExtend" javaType="com.loveLight.entity.AccountExtend">
+  		<result property="trueName" column="trueName"/>
   		<result property="birthday" column="birthday"/>
+  		<result property="marry" column="marry"/>
   		<result property="edu" column="edu"/>
   		<result property="salary" column="salary"/>
   		<result property="introduction" column="introduction"/>
