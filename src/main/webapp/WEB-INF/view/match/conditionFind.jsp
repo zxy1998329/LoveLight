@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -49,7 +47,7 @@
 <script src="/assets/js/modernizr-2.6.2.min.js"></script>
 <!-- FOR IE9 below -->
 <!--[if lt IE 9]>
-<script src="/assets/js/respond.min.js"></script>
+<script src="js/respond.min.js"></script>
 <![endif]-->
 
 </head>
@@ -104,7 +102,11 @@
 				with (field)
 				  {
 				  if (value==null||value=="")
-				    {alert(alerttxt);return false}
+					  {
+					  	field=null;
+					    {alert(alerttxt);return false}
+					  }
+					 
 				  else {return true}
 				  }
 				}
@@ -113,8 +115,13 @@
 				{
 				with (thisform)
 				  {
-					if (validate_required(username,"身高为空")==false)
-					    {username.focus();return false}
+					if (validate_required(high,"身高为空")==false)
+// 					    {high.focus();return false}
+						
+					if (validate_required(salary,"月薪为空")==false)
+// 					    {salary.focus();return false}
+					if (validate_required(area,"地区为空")==false)
+// 					    {area.focus();return false}
 				  }
 				}
 		</script>
@@ -122,11 +129,13 @@
 	<div class="container" ;>
 		<div class="animate-box">
 			<div >
-				<h1 style="margin-top: 50px;color: #848484;font-family: "Open Sans", Arial, sans-serif;">账号匹配</h1>
+				<h1 style="margin-top: 50px;color: #848484;font-family: "Open Sans", Arial, sans-serif;">条件匹配</h1>
 				<div >
-					<form action="/match/finByAccount" onsubmit="return validate_form(this)" method="post">
+					<form action="/match/finByCon" onsubmit="return validate_form(this)" method="post">
 					<ul  style="list-style:none;font-size: 16px;color: #848484;font-family: "Open Sans", Arial, sans-serif;" >
-						<li style="margin-left:10%;margin-top:5%;font-size:18px;">账号: <input id="t1" type="text" style="width:30%" class="form-control" name="username"></li>
+						<li style="margin-left:10%;margin-top:5%;font-size:18px;">身高: <input id="t1" type="text" style="width:30%" class="form-control" name="high"></li>
+						<li style="margin-left:10%;margin-top:5%;font-size:18px;">收入:<input id="t1" type="text" style="width:30%" class="form-control" name="salary"></li>
+						<li style="margin-left:10%;margin-top:5%;font-size:18px;">地区:<input id="t2" type="text" style="width:30%"class="form-control" name="area"></li>
 						<li style="margin-left:20%;margin-top:5%;font-size:20px;"><button  type="submit" name="update">匹配</button></li>
 					</ul>
 					</form>
@@ -139,7 +148,7 @@
 
 
 	
-	<footer>
+ 	<footer>
 	<div id="footer">
 		<div class="container">
 			<div class="row">

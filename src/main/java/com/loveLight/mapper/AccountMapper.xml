@@ -167,7 +167,6 @@
 
   <select id="dynamicSearch" resultType = "com.loveLight.entity.Account">
   	select
-  		select
   		accounts.username,
   		accounts.name,
   		sex,
@@ -182,14 +181,14 @@
   	on
   		accounts.username = account_extend.username 
 	<where>
-		<if test="high!=null">
-			high = #{high}
+		<if test="param1!=&quot;&quot;">
+			high = #{param1}
 		</if>
-		<if test="salary!=null">
-			and salary = #{salary}
+		<if test="param2!=&quot;&quot;">
+			and salary = #{param2}
 		</if>
-		<if test="area!=null">
-			and area = #{area}
+		<if test="param3!=&quot;&quot;">
+			and area = #{param3}
 		</if>	
 	</where>
   </select>

@@ -26,7 +26,7 @@ public class MatchController {
 	@Autowired
 	private MatchService matchService;
 	
-	@RequestMapping(value="",method=RequestMethod.GET)
+	@RequestMapping(value="",method=RequestMethod.POST)
 	public String sysMatch(HttpSession session,Model model) {//系统匹配返回多个账户，需要当前的用户信息
 		
 		List<Account> result = matchService.sysMatch((String) session.getAttribute("username"));//调用服务层的匹配函数
@@ -53,6 +53,10 @@ public class MatchController {
 	public String findCon(String high,String salary,String area,Model model) {
 		
 		List<Account> result = matchService.dynamicSearch(high, salary, area);
+		if(high==null)
+			System.out.println("null");
+		if(high=="")
+			System.out.println("没有");
 		model.addAttribute("result", result);
 		return "match/match";	
 	}

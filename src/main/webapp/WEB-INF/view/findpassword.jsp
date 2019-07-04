@@ -14,7 +14,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="/assets/css/reset.css">
         <link rel="stylesheet" href="/assets/css/supersized.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/style1.css">
         <style type="text/css">
         login {
             font-size: larger;
@@ -53,7 +53,7 @@
         <script src="/assets/js/jquery-1.8.2.min.js" ></script>
         <script src="/assets/js/supersized.3.2.7.min.js" ></script>
         <script src="/assets/js/supersized-init.js?v=1" ></script>
-        <script src="/assets/js/scripts.js" ></script>
+        <script src="/assets/js/scripts1.js" ></script>
 
     </body>
 
