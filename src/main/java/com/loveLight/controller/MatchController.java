@@ -26,7 +26,7 @@ public class MatchController {
 	@Autowired
 	private MatchService matchService;
 	
-	@RequestMapping(value="",method=RequestMethod.POST)
+	@RequestMapping(value="",method=RequestMethod.GET)
 	public String sysMatch(HttpSession session,Model model) {//系统匹配返回多个账户，需要当前的用户信息
 		
 		List<Account> result = matchService.sysMatch((String) session.getAttribute("username"));//调用服务层的匹配函数
@@ -61,7 +61,7 @@ public class MatchController {
 		return "match/match";	
 	}
 	
-	@RequestMapping(value="/toCondition",method=RequestMethod.POST)
+	@RequestMapping(value="/toCondition",method=RequestMethod.GET)
 	public String toCondition() {
 		return "match/conditionFind";
 	}
