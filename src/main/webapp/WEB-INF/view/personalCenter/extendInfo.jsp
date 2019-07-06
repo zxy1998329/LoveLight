@@ -82,8 +82,8 @@
 						<li>
 							<a href="blog.html">个人中心</a>
 							<ul class="fh5co-sub-menu">
-								<li><a href="/baseInfo">个人基本资料</a></li>
-								<li><a href="/extendInfo">个人拓展资料</a></li>
+								<li><a href="baseInfo">个人基本资料</a></li>
+								<li><a href="personal">个人拓展资料</a></li>
 								<li><a href="#">账号管理</a></li>
 								<li><a href="#">实名认证</a></li>
 								<li><a href="#">个人空间</a></li>
@@ -100,33 +100,51 @@
 	<div class="container" ;>
 		<div class="animate-box">
 			<div >
-				<h1 style="margin-top: 50px;color: #848484;font-family: "Open Sans", Arial, sans-serif;">个人基本资料</h1>
+				<h1 style="margin-top: 50px;color: #848484;font-family: "Open Sans", Arial, sans-serif;">个人拓展资料</h1>
 				<div >
-					<form action="/baseInfo" method="post" enctype="multipart/form-data">
+					<!-- 头像上传start -->
+					<form action="/extendInfo/head" method="post" enctype="multipart/form-data">
 					<ul  style="list-style:none;font-size: 16px;color: #848484;font-family: "Open Sans", Arial, sans-serif;" >
-						<li style="margin-left:10%;margin-top:5%;font-size:18px;">用户名: <input type="text" style="width:30%" class="form-control" name="username" value="${sessionScope.accountInfo.getUsername() }" ></li>
-						<li style="margin-left:10%;margin-top:5%;font-size:18px;">原密码:<input type="password" style="width:30%" class="form-control" name="oldPassword" value=""></li>
-						<li style="margin-left:10%;margin-top:5%;font-size:18px;">新密码:<input type="password" style="width:30%" class="form-control" name="password" value=""></li>
-						<li style="margin-left:10%;margin-top:5%;font-size:18px;">确认密码:<input type="password" style="width:30%" class="form-control" name="rPassword" value=""></li>
-						
-						<!-- 设置性别默认选中 -->
-						<c:set var="account" scope="page" value="${sessionScope.accountInfo }" ></c:set>
-						<li style="margin-left:10%;margin-top:5%;font-size:18px;">性别:
-						
-						<input type="radio" style="margin-left: 3%" name="sex" ${account.sex eq 'M' ? ' checked="checked" ' : ' ' } value="M">男
-						<input style="margin-left: 1%"type="radio" name="sex" ${account.sex eq 'F' ? ' checked="checked" ' : ' ' } value="F">女
+						<li style="margin-left: 10%; margin-top: 5%; font-size: 18px;">头像<br /> 
+						<img alt="头像" src="/pictures/head/${sessionScope.username }.jpg" width="100" height="100"
+						 ${sessionScope.sex eq "M" ? "onerror=\"this.src='/pictures/head/defultM.jpg'\""
+						 : "onerror=\"this.src='/pictures/head/defultF.jpg'\""
+						  }
+						 />
+						<input type="file" style="width: 30%"class="form-control" name="head">
+						<p>（目前只支持jpg格式文件，请谅解）</p>
 						</li>
-						<li style="margin-left:10%;margin-top:5%;font-size:18px;">身高:
-							<select style="margin-left: 3%;width: 80px; " name="high">
-		                        <c:forEach begin="140" end="210" var="h">
-		                        <option ${account.high eq h ? ' selected="selected"' : ' ' } value="${h }">${h }cm</option>
-		                        </c:forEach>
-			                </select>
+						<li style="margin-left: 10%; margin-top: 5%; font-size: 18px;"><input
+							type="submit" value="上传头像">
 						</li>
-						<li style="margin-left:10%;margin-top:5%;font-size:18px;">地区:<input type="text" style="width:30%"class="form-control" name="area" value="${sessionScope.accountInfo.getArea()}"></li>
-						<li style="margin-left:10%;margin-top:5%;font-size:18px;">密保问题:<input type="text" style="width:30%"class="form-control" name="question" value="${sessionScope.accountInfo.getQuestion()}"></li>
-						<li style="margin-left:10%;margin-top:5%;font-size:20px;">密保答案<textarea style="width:70%; height:100px;"  class="form-control" name="answer">${sessionScope.accountInfo.getAnswer()}</textarea></li>
-						<li style="margin-left:20%;margin-top:5%;font-size:20px;"><button type="submit" name="update">修改个人基本信息</button></li>
+					</ul>
+					</form>
+					<!-- 头像上传end -->
+					<form action="/extendInfo" method="post">
+					<ul  style="list-style:none;font-size: 16px;color: #848484;font-family: "Open Sans", Arial, sans-serif;" >
+					<c:set var="accountExtend" scope="page" value="${sessionScope.accountExtendInfo }"></c:set>
+						<li style="margin-left:10%;margin-top:5%;font-size:18px;">真实姓名: <input type="text" style="width:30%" class="form-control" name="trueName" value="${accountExtend.trueName }" ></li>
+						<li style="margin-left:10%;margin-top:5%;font-size:18px;">生日:<input type="text" style="width:30%" class="form-control" name="birthday" value="${accountExtend.birthday }" ></li>
+						<!-- 婚姻状况 -->
+						<li style="margin-left:10%;margin-top:5%;font-size:18px;">婚姻状况:
+						<input type="radio" style="margin-left: 3%" name="marry" value="Y" ${accountExtend.marry eq 'Y'  ? ' checked="checked" ' : ' ' } >已婚
+						<input style="margin-left: 1%"type="radio" name="marry" value="N" ${accountExtend.marry eq 'N'  ? ' checked="checked" ' : ' ' } >未婚
+						<input style="margin-left: 1%"type="radio" name="marry" value="L" ${accountExtend.marry eq 'L'  ? ' checked="checked" ' : ' ' } >离婚
+						</li>
+						<li style="margin-left:10%;margin-top:5%;font-size:18px;">学历:
+							<select style="margin-left: 3%;width: 80px; " name="edu">
+									<option value="1" ${accountExtend.edu eq '1'  ?  'selected="selected"' : ' ' } >小学</option>
+									<option value="2" ${accountExtend.edu eq '2'  ?  'selected="selected"' : ' ' } >初中</option>
+									<option value="3" ${accountExtend.edu eq '3'  ?  'selected="selected"' : ' ' } >高中</option>
+									<option value="4" ${accountExtend.edu eq '4'  ?  'selected="selected"' : ' ' } >学士</option>
+									<option value="5" ${accountExtend.edu eq '5'  ?  'selected="selected"' : ' ' } >硕士</option>
+									<option value="6" ${accountExtend.edu eq '6'  ?  'selected="selected"' : ' ' } >博士</option>
+							</select>
+						</li>
+						<li style="margin-left:10%;margin-top:5%;font-size:18px;">月薪:<input type="text" style="width:30%"class="form-control" name="salary" value="${accountExtend.salary }" ></li>
+						<li style="margin-left:10%;margin-top:5%;font-size:18px;">手机号:<input type="text" style="width:30%"class="form-control" name="phoneNum" value="${accountExtend.phoneNum }" ></li>
+						<li style="margin-left:10%;margin-top:5%;font-size:20px;">自我介绍<textarea style="width:70%; height:100px;"  class="form-control" name="introduction">${accountExtend.introduction }</textarea></li>
+						<li style="margin-left:20%;margin-top:5%;font-size:20px;"><button type="submit" name="update">修改个人拓展信息</button></li>
 					</ul>
 					</form>
 				</div>	
@@ -167,7 +185,7 @@
 <!-- Google Map -->
 <!---<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>--->
 <!-- jQuery -->
-<script src="/assets/dist/scripts1.min.js"></script>
+<script src="/assets/dist/scripts.min.js"></script>
 </body>
 </html>
 

@@ -7,12 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.loveLight.entity.Account;
 import com.loveLight.mapper.AccountMapper;
 import com.loveLight.service.RegisterService;
 
 @Controller
+@RequestMapping(value="/baseInfo")
 public class BaseInfoController {
 	
 	
@@ -21,7 +23,7 @@ public class BaseInfoController {
 	@Autowired
 	private AccountMapper accountMapper;
 	
-	@GetMapping (value="/baseInfo" )
+	@RequestMapping(method = RequestMethod.GET )
 	public String goingToChangeBaseData(HttpSession session ) {
 		String username = (String) session.getAttribute("username");	//从session中获取当前用户的username
 		account = accountMapper.findAccountInfoByUsername(username);	//通过username获取用户的基本资料
@@ -32,11 +34,13 @@ public class BaseInfoController {
 	@Autowired
 	private RegisterService registerService;
 	
-	@PostMapping(value="/baseInfo")
+	@RequestMapping(method = RequestMethod.POST )
 	public String updateBaseInfo(Account account, HttpSession session) {
 		registerService.updateAccount(account);
 		session.setAttribute("accountInfo", account);	//更新session中的accountInfo
 		return "personalCenter/baseInfo";
 	}
+	
+	
 	
 }
