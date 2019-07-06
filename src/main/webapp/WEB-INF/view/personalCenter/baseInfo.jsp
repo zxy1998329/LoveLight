@@ -82,8 +82,8 @@
 						<li>
 							<a href="blog.html">个人中心</a>
 							<ul class="fh5co-sub-menu">
-								<li><a href="baseInfo">个人基本资料</a></li>
-								<li><a href="extendInfo">个人拓展资料</a></li>
+								<li><a href="/baseInfo">个人基本资料</a></li>
+								<li><a href="/extendInfo">个人拓展资料</a></li>
 								<li><a href="#">账号管理</a></li>
 								<li><a href="#">实名认证</a></li>
 								<li><a href="#">个人空间</a></li>
@@ -102,7 +102,7 @@
 			<div >
 				<h1 style="margin-top: 50px;color: #848484;font-family: "Open Sans", Arial, sans-serif;">个人基本资料</h1>
 				<div >
-					<form action="/baseInfo" method="post">
+					<form action="/baseInfo" method="post" enctype="multipart/form-data">
 					<ul  style="list-style:none;font-size: 16px;color: #848484;font-family: "Open Sans", Arial, sans-serif;" >
 						<li style="margin-left:10%;margin-top:5%;font-size:18px;">用户名: <input type="text" style="width:30%" class="form-control" name="username" value="${sessionScope.accountInfo.getUsername() }" ></li>
 						<li style="margin-left:10%;margin-top:5%;font-size:18px;">原密码:<input type="password" style="width:30%" class="form-control" name="oldPassword" value=""></li>
