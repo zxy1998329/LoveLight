@@ -9,6 +9,6 @@ public class testController {
 
 	@RequestMapping(value="testBase",method=RequestMethod.GET)
 	String testBase() {
-		return "personalCenter/extendInfo";
+		return "friendslist";
 	}
 }
