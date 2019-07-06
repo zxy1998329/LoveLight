@@ -118,7 +118,7 @@
 									<h3>昵称：<c:out value="${account.username }"></c:out></h3>
 									<h3>地区：<c:out value="${account.area}"></c:out>&nbsp;&nbsp;身高：<c:out value="${account.high }"></c:out>
 									<c:if test="${account.accountExtend.salary!=null}">
-										&nbsp;&nbsp;收入：<c:out value="${account.accountExtend }"></c:out>	
+										&nbsp;&nbsp;收入：<c:out value="${account.accountExtend.salary }"></c:out>	
 									</c:if>
 									</h3>
 									<a href="#">添加好友</a>
