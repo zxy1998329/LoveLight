@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>sessuss!</h2>
-	<a href="/extendInfo"> 返回 </a>
+
 </body>
 </html>
