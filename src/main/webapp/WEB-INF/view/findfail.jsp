@@ -1,5 +1,5 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%> -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
@@ -14,7 +14,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="/assets/css/reset.css">
         <link rel="stylesheet" href="/assets/css/supersized.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/style1.css">
         <style type="text/css">
         login {
             font-size: larger;
@@ -48,15 +48,16 @@
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                 <pre>    </pre>
                 <pre>    </pre>
-                <a href="http://localhost:8080/login.jsp"><span style="font-size:25px">返回找回页面</span></a>
+                <a href="/findPassWord/sendEmail"><span style="font-size:25px">返回找回页面</span></a>
             </form>
         </div>
 		
         <!-- Javascript -->
         <script src="/assets/js/jquery-1.8.2.min.js" ></script>
         <script src="/assets/js/supersized.3.2.7.min.js" ></script>
-        <script src="/assets/js/supersized-init.js?v=1" ></script>
-        <script src="/assets/js/scripts.js" ></script>
+        <script src="/assets/js/supersized-init.js" ></script>
+        <script src="/assets/js/scripts1.js" ></script>
+
 
     </body>
 

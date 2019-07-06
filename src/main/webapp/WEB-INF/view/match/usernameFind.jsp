@@ -70,9 +70,9 @@
 						<li><a href="#" class="fh5co-sub-ddown">恋爱天堂</a></li>
 						<li><a href="#">遇见Ta</a>
 							<ul class="fh5co-sub-menu">
-								<li><a href="match.html">系统匹配</a></li>
-								<li><a href="conditionFind.html">按条件查找</a></li>
-								<li><a href="usernameFind.html">按账号查找</a></li>
+								<li><a href="/match">系统匹配</a></li>
+								<li><a href="/match/toCondition">按条件查找</a></li>
+								<li><a href="/match/toUserName">按账号查找</a></li>
 							</ul>
 						</li>
 						<li><a href="activity.html">活动天地</a></li>

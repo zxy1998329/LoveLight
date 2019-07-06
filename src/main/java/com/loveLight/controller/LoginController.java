@@ -32,10 +32,10 @@ public class LoginController {
 			session.setAttribute("username", row1);
 
 			session.setAttribute("reset", 1);
-			return "homePage";
+			return "redirect:index.jsp";
 		}
 		else {
-			return "redirect:login.jsp";
+			return "redirect:indexLogin.jsp";
 		}
 		
 		

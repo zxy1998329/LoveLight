@@ -66,7 +66,7 @@ public class MatchController {
 		return "match/conditionFind";
 	}
 	
-	@RequestMapping(value="/toUserName",method=RequestMethod.POST)
+	@RequestMapping(value="/toUserName",method=RequestMethod.GET)
 	public String toUserName() {
 		return "match/usernameFind";
 	}

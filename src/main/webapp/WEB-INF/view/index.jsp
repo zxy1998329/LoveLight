@@ -91,7 +91,7 @@
     right:0;
     top:25%;
     display:none;
-    background-image:url(/assets/images/33.jpg);
+    background-image:url(images/33.jpg);
     background-position:-150px 0px;
 }
 
@@ -146,7 +146,7 @@
 
 	<div class="fh5co-hero" data-section="home">
 		<div class="fh5co-overlay"></div>
-		<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(/assets/images/cover_bg_1.jpg);">
+		<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
 			<div class="display-t">
 				<div class="display-tc">
 					<div class="container">
@@ -175,9 +175,9 @@
 						<li><a href="#" class="fh5co-sub-ddown">恋爱天堂</a></li>
 						<li><a href="#">遇见Ta</a>
 							<ul class="fh5co-sub-menu">
-								<li><a href="/match">系统匹配</a></li>
-								<li><a href="/match/toCondition">按条件查找</a></li>
-								<li><a href="/match/toUserName">按账号查找</a></li>
+								<li><a href="match.html">系统匹配</a></li>
+								<li><a href="conditionFind.html">按条件查找</a></li>
+								<li><a href="usernameFind.html">按账号查找</a></li>
 							</ul>
 						</li>
 						<li><a href="activity.html">活动天地</a></li>
@@ -238,29 +238,29 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="gallery animate-box">
-							<a class="gallery-img image-popup image-popup" href="/assets/images/gallery-1.jpg"><img src="/assets/images/blogs1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+							<a class="gallery-img image-popup image-popup" href="images/gallery-1.jpg"><img src="images/blogs1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 						</div>
 						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="/assets/images/gallery-7.jpg"><img src="/assets/images/blogs2.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="/assets/images/gallery-6.jpg"><img src="/assets/images/blogs3.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="/assets/images/gallery-2.jpg"><img src="/assets/images/blogs4.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="/assets/images/gallery-5.jpg"><img src="/assets/images/blogs5.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+							<a class="gallery-img image-popup" href="images/gallery-7.jpg"><img src="images/blogs2.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="/assets/images/gallery-3.jpg"><img src="/assets/images/blogs6.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+							<a class="gallery-img image-popup" href="images/gallery-6.jpg"><img src="images/blogs3.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 						</div>
 						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="/assets/images/gallery-4.jpg"><img src="/assets/images/gallery-4.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+							<a class="gallery-img image-popup" href="images/gallery-2.jpg"><img src="images/blogs4.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+						</div>
+						<div class="gallery animate-box">
+							<a class="gallery-img image-popup" href="images/gallery-5.jpg"><img src="images/blogs5.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="gallery animate-box">
+							<a class="gallery-img image-popup" href="images/gallery-3.jpg"><img src="images/blogs6.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+						</div>
+						<div class="gallery animate-box">
+							<a class="gallery-img image-popup" href="images/gallery-4.jpg"><img src="images/gallery-4.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 						</div>
 					</div>
 				</div>
@@ -291,7 +291,7 @@
 				<div class="row row-bottom-padded-md">
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="/assets/images/cover_bg_1.jpg" alt=""></a>
+							<a href="#"><img class="img-responsive" src="images/cover_bg_1.jpg" alt=""></a>
 							<div class="blog-text">
 								<div class="prod-title">
 									<h3><a href="#">The Wedding Celebration</a></h3>
@@ -306,7 +306,7 @@
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="/assets/images/girls4.jpg" alt=""></a>
+							<a href="#"><img class="img-responsive" src="images/girls4.jpg" alt=""></a>
 							<div class="blog-text">
 								<div class="prod-title">
 									<h3><a href="#">Preparation of Wedding</a></h3>
@@ -322,7 +322,7 @@
 					<div class="clearfix visible-sm-block"></div>
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="/assets/images/cover_bg_3.jpg" alt=""></a>
+							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
 							<div class="blog-text">
 								<div class="prod-title">
 									<h3><a href="#">Party Night</a></h3>
@@ -338,7 +338,7 @@
 					<div class="clearfix visible-lg-block visible-md-block"></div>
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="/assets/images/girls5.jpg" alt=""></a>
+							<a href="#"><img class="img-responsive" src="images/girls5.jpg" alt=""></a>
 							<div class="blog-text">
 								<div class="prod-title">
 									<h3><a href="#">The Wedding Celebration</a></h3>
@@ -354,7 +354,7 @@
 					<div class="clearfix visible-sm-block"></div>
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="/assets/images/girls6.jpg" alt=""></a>
+							<a href="#"><img class="img-responsive" src="images/girls6.jpg" alt=""></a>
 							<div class="blog-text">
 								<div class="prod-title">
 									<h3><a href="#">Preparation of Wedding</a></h3>
@@ -369,7 +369,7 @@
 					</div>
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="fh5co-blog animate-box">
-							<a href="#"><img class="img-responsive" src="/assets/images/cover_bg_3.jpg" alt=""></a>
+							<a href="#"><img class="img-responsive" src="images/cover_bg_3.jpg" alt=""></a>
 							<div class="blog-text">
 								<div class="prod-title">
 									<h3><a href="#">Party Night</a></h3>
@@ -404,7 +404,7 @@
 				<div class="row padding">
 					<div class="couple-wrap">
 						<div class="col-md-6 nopadding animate-box">
-							<img src="/assets/images/boys1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+							<img src="images/boys1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 						</div>
 						<div class="col-md-6 nopadding animate-box">
 							<div class="couple-desc">
@@ -424,7 +424,7 @@
 				<div class="row padding">
 					<div class="couple-wrap">
 						<div class="col-md-6 col-md-push-6 nopadding animate-box">
-							<img src="/assets/images/girls1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+							<img src="images/girls1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 						</div>
 						<div class="col-md-6 col-md-pull-6 nopadding animate-box">
 							<div class="couple-desc">
@@ -454,7 +454,7 @@
 				<div class="row padding">
 					<div class="couple-wrap">
 						<div class="col-md-6 nopadding animate-box">
-							<img src="/assets/images/homeact1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+							<img src="images/homeact1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 						</div>
 						<div class="col-md-6 nopadding animate-box">
 							<div class="couple-desc">
@@ -474,7 +474,7 @@
 				<div class="row padding">
 					<div class="couple-wrap">
 						<div class="col-md-6 col-md-push-6 nopadding animate-box">
-							<img src="/assets/images/homeact2.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+							<img src="images/homeact2.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
 						</div>
 						<div class="col-md-6 col-md-pull-6 nopadding animate-box">
 							<div class="couple-desc">
@@ -519,20 +519,20 @@
 		<!-- 默认显示的浮窗 --> 
 	<div class="nav">
 		<div class="test1">
-			<img src="/assets/images/service.png" width="35px" height="35px">
+			<img src="images/service.png" width="35px" height="35px">
 		
 		
 		<div class="nav2"> 
 			<p> 
 				<a target="_blank" href="#"> 
 					<span>客服1</span> <br/>
-					<img border="0" src="/assets/images/button11.gif" alt="点击这里给我发消息" title="点击这里给我发消息"> 
+					<img border="0" src="images/button11.gif" alt="点击这里给我发消息" title="点击这里给我发消息"> 
 					
 				</a> 
 			</p> 
 			<p> <a target="_blank" href="#"> 
 				<span>客服2</span> <br/>
-				<img border="0" src="/assets/images/button11.gif" alt="点击这里给我发消息" title="点击这里给我发消息"> </a> </p> 
+				<img border="0" src="images/button11.gif" alt="点击这里给我发消息" title="点击这里给我发消息"> </a> </p> 
 		</div> 
 		</div> 
 	</div> <!-- 小浮窗 --> 
