@@ -4,192 +4,205 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.loveLight.mapper.AccountMapper">
 
- <select id="findAccount" parameterType="com.loveLight.entity.Account" resultType = "String">
-  	SELECT
-  		username
-  	FROM
-  		accounts
-  	WHERE
-  		username = #{username} and PASSWORD = #{password}
-  </select>
-  
-  <insert id="insertAll" parameterType="com.loveLight.entity.Account">
-  	INSERT INTO 
-  		accounts (username,password,question,answer,name,sex,high,area,role) 
-  	VALUES
-  		(#{username}, #{password}, #{question}, 
-  		#{answer}, #{name}, #{sex},#{high},#{area},0)
-  
-  
-  </insert>
-  
-  <select id="updateByRole" parameterType="String" resultType = "com.loveLight.entity.Account">
- 	update
- 		accounts
- 	set
-  		role = 2
-  	WHERE
-  		username = #{username} 
-  </select>
-  
-  <update id="reset">
-  	update
-  		accounts
-  	set
-  		password=#{newPassWord}
-  	where
-  		username=#{account}
-  </update>
-  
+	<select id="findAccount"
+		parameterType="com.loveLight.entity.Account" resultType="String">
+		SELECT
+		username
+		FROM
+		accounts
+		WHERE
+		username = #{username} and PASSWORD = #{password}
+	</select>
 
-  <select id="findByHigh" resultType="com.loveLight.entity.Account">
-  	select
-  		username,
-  		password,
-  		name,
-  		sex,
-  		high,
-  		area,
-  		role
-  	from
-  		accounts
-  	where
-  		high&gt;#{param1} and high&lt;#{param2} and sex=#{param3}
-  	limit
-  		1
-  </select>
-  
-  <select id="findByArea" resultType="com.loveLight.entity.Account">
-  	select
-  		username,
-  		password,
-  		name,
-  		sex,
-  		high,
-  		area,
-  		role
-  	from
-  		accounts
-  	where
-  		area=#{param1} and sex!=#{param2}
-  	limit
-  		2
-  </select>
-  
-    <select id="findByEdu" resultMap="resultAccountMap">
-  	select
-  		accounts.username,
-  		accounts.name,
-  		sex,
-  		high,
-  		area,
-  		birthday,
-  		edu,
-  		salary,
-  		introduction
-  	from
-  		accounts left join account_extend
-  	on
-  		accounts.username = account_extend.username 
-  	where 
-  		edu=#{param1} and sex=#{param2}
-  	limit
-  		1
-  </select>
-  
-  <resultMap type="com.loveLight.entity.Account" id="resultAccountMap">
-  	<id property="username" column="username"/>
-  	<result property="name" column="name"/>
-  	<result property="sex" column="sex"/>
-  	<result property="high" column="high"/>
-  	<result property="area" column="area"/>
-  	<association property="accountExtend" javaType="com.loveLight.entity.AccountExtend">
-  		<result property="birthday" column="birthday"/>
-  		<result property="edu" column="edu"/>
-  		<result property="salary" column="salary"/>
-  		<result property="introduction" column="introduction"/>
-  	</association>
-  </resultMap>
-  
-  <select id="findAccountByUsername" resultMap="resultAccountMap">
-  	select
-  		accounts.username,
-  		accounts.name,
-  		sex,
-  		high,
-  		area,
-  		birthday,
-  		edu,
-  		salary,
-  		introduction
-  	from
-  		accounts left join account_extend
-  	on
-  		accounts.username = account_extend.username 
-	where 
+	<insert id="insertAll"
+		parameterType="com.loveLight.entity.Account">
+		INSERT INTO
+		accounts (username,password,question,answer,name,sex,high,area,role)
+		VALUES
+		(#{username}, #{password}, #{question},
+		#{answer}, #{name}, #{sex},#{high},#{area},0)
+
+
+	</insert>
+
+	<select id="updateByRole" parameterType="String"
+		resultType="com.loveLight.entity.Account">
+		update
+		accounts
+		set
+		role = 2
+		WHERE
+		username = #{username}
+	</select>
+
+	<update id="reset">
+		update
+		accounts
+		set
+		password=#{newPassWord}
+		where
+		username=#{account}
+	</update>
+
+
+	<select id="findByHigh"
+		resultType="com.loveLight.entity.Account">
+		select
+		username,
+		password,
+		name,
+		sex,
+		high,
+		area,
+		role
+		from
+		accounts
+		where
+		high&gt;#{param1} and high&lt;#{param2} and sex=#{param3}
+		limit
+		2
+	</select>
+
+	<select id="findByArea"
+		resultType="com.loveLight.entity.Account">
+		select
+		username,
+		password,
+		name,
+		sex,
+		high,
+		area,
+		role
+		from
+		accounts
+		where
+		area=#{param1} and sex!=#{param2}
+		limit
+		2
+	</select>
+
+	<select id="findByEdu" resultMap="resultAccountMap">
+		select
+		accounts.username,
+		accounts.name,
+		sex,
+		high,
+		area,
+		birthday,
+		edu,
+		salary,
+		introduction
+		from
+		accounts left join account_extend
+		on
+		accounts.username = account_extend.username
+		where
+		edu=#{param1} and sex=#{param2}
+		limit
+		2
+	</select>
+
+	<resultMap type="com.loveLight.entity.Account"
+		id="resultAccountMap">
+		<id property="username" column="username" />
+		<result property="name" column="name" />
+		<result property="sex" column="sex" />
+		<result property="high" column="high" />
+		<result property="area" column="area" />
+		<association property="accountExtend"
+			javaType="com.loveLight.entity.AccountExtend">
+			<result property="trueName" column="trueName" />
+			<result property="birthday" column="birthday" />
+			<result property="marry" column="marry" />
+			<result property="edu" column="edu" />
+			<result property="salary" column="salary" />
+			<result property="introduction" column="introduction" />
+		</association>
+	</resultMap>
+
+	<select id="findAccountByUsername" resultMap="resultAccountMap">
+		select
+		accounts.username,
+		accounts.name,
+		sex,
+		high,
+		area,
+		birthday,
+		edu,
+		salary,
+		introduction
+		from
+		accounts left join account_extend
+		on
+		accounts.username = account_extend.username
+		where
 		accounts.username=#{value}
-  </select>
+	</select>
 
 
-  <select id="findAccountInfoByUsername" parameterType="string" resultType="com.loveLight.entity.Account" >
-  	select 
-  		*
-  	from
-  		accounts
-  	where
-  		username = #{value}
-  </select>
-  
-  <update id="updateAccount" parameterType="com.loveLight.entity.Account">
-  	update 
-  		accounts
-  	set
-  		password = #{password},
-  		sex = #{sex},
-  		high = #{high},
-  		area = #{area},
-  		question = #{question},
-  		answer = #{answer}
-  	where
-  		username = #{username}
-  </update>
-  
+	<select id="findAccountInfoByUsername" parameterType="string"
+		resultType="com.loveLight.entity.Account">
+		select
+		*
+		from
+		accounts
+		where
+		username = #{value}
+	</select>
 
-  <select id="findByUsername" parameterType="String" resultType = "com.loveLight.entity.Account">
-  	select
- 		username,role
- 	from
-  		accounts
-  	WHERE
-  		username = #{username} 
-  </select>
-  
+	<update id="updateAccount"
+		parameterType="com.loveLight.entity.Account">
+		update
+		accounts
+		set
+		password = #{password},
+		sex = #{sex},
+		high = #{high},
+		area = #{area},
+		question = #{question},
+		answer = #{answer}
+		where
+		username = #{username}
+	</update>
 
-  <select id="dynamicSearch" resultType = "com.loveLight.entity.Account">
-  	select
-  		accounts.username,
-  		accounts.name,
-  		sex,
-  		high,
-  		area,
-  		birthday,
-  		edu,
-  		salary,
-  		introduction
-  	from
-  		accounts left join account_extend
-  	on
-  		accounts.username = account_extend.username 
-	<where>
-		<if test="param1!=&quot;&quot;">
-			high = #{param1}
-		</if>
-		<if test="param2!=&quot;&quot;">
-			and salary = #{param2}
-		</if>
-		<if test="param3!=&quot;&quot;">
-			and area = #{param3}
-		</if>	
-	</where>
-  </select>
- </mapper>
+
+	<select id="findByUsername" parameterType="String"
+		resultType="com.loveLight.entity.Account">
+		select
+		username,role
+		from
+		accounts
+		WHERE
+		username = #{username}
+	</select>
+
+	<select id="dynamicSearch"
+		resultType="com.loveLight.entity.Account">
+		select
+		accounts.username,
+		accounts.name,
+		sex,
+		high,
+		area,
+		birthday,
+		edu,
+		salary,
+		introduction
+		from
+		accounts left join account_extend
+		on
+		accounts.username = account_extend.username
+		<where>
+			<if test="param1!=&quot;&quot;">
+				high = #{param1}
+			</if>
+			<if test="param2!=&quot;&quot;">
+				and salary = #{param2}
+			</if>
+			<if test="param3!=&quot;&quot;">
+				and area = #{param3}
+			</if>
+		</where>
+	</select>
+
+</mapper>
