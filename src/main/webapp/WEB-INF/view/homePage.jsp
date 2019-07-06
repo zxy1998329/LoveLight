@@ -17,5 +17,13 @@
 <button type="submit" class="submit_button">基本资料</button>
 </form>
 
+<form action="/friendsadd" method = "post">
+ <input type="text" name="username" class="username" placeholder="请输入需要添加的好友名！">
+<button type="submit" class="submit_button">添加好友</button>
+</form>
+
+<form action="/friendsinvite" method = "post">
+<button type="submit" class="submit_button">好友邀请</button>
+</form>
 </body>
 </html>
