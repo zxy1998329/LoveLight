@@ -17,5 +17,18 @@
 <button type="submit" class="submit_button">基本资料</button>
 </form>
 
+<form action = "/match" method = "post">
+<button type="submit" class="submit_button">系统匹配</button>
+</form>
+
+
+<form action = "/match/toUserName" method = "post">
+<button type="submit" class="submit_button">账号匹配</button>
+</form>
+
+<form action = "/match/toCondition" method = "post">
+<button type="submit" class="submit_button">条件匹配</button>
+</form>
+
 </body>
 </html>

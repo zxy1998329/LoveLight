@@ -4,11 +4,14 @@ public class AccountExtend {
 	private String username;
 	private String trueName;
 	private String birthday;
+
 	private String marry;		//结婚为Y 离婚为N  离异为L
 	private String edu;			//小学1 初中2 高中3 本科4 硕士5 博士6
+
 	private int salary;
 	private String phoneNum;
 	private String introduction;
+
 	public String getTrueName() {
 		return trueName;
 	}

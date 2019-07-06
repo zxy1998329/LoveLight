@@ -32,7 +32,7 @@ public class FindPassWordController {
 	}
 
 	@RequestMapping(value = "/sendEmail", method = RequestMethod.POST)
-	public String sendEmail(@RequestParam("email") String email, @RequestParam("account")String account,HttpSession session) {
+	public String sendEmail(@RequestParam("email") String email, @RequestParam("username")String account,HttpSession session) {
 		
 		String num = passWordService.sendEmail(email);
 		session.setAttribute("randomNum", num);
@@ -47,22 +47,23 @@ public class FindPassWordController {
 		String randomNum = (String) session.getAttribute("randomNum");
 		if(passWordService.emailMatch(inputNum,randomNum)) {
 			System.out.println("suucess!");
-			session.setAttribute("account", null);
 			return "findpassword";
 		}
 		else {
 			System.out.println("fail!");
-			return "fail";
+			return "findfailfail";
 		}
 	}
 	
 	@RequestMapping(value = "/reset",method = RequestMethod.POST)
 	public String reset(@RequestParam("newPassWord") String newPassWord,HttpSession session) {
 		
-		if(passWordService.reset(newPassWord,(String)session.getAttribute("account")))
+		if(passWordService.reset(newPassWord,(String)session.getAttribute("account"))) {
+			session.setAttribute("account", null);
 			return "findsuccess";
+		}
 		else 
-			return "fail";
+			return "findfail";
 	
 	}
 }
