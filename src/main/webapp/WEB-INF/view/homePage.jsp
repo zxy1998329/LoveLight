@@ -25,5 +25,7 @@
 <form action="/friendsinvite" method = "post">
 <button type="submit" class="submit_button">好友邀请</button>
 </form>
+
+
 </body>
 </html>
