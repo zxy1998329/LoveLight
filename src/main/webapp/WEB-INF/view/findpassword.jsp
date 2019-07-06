@@ -1,5 +1,5 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%> -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
@@ -14,7 +14,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="/assets/css/reset.css">
         <link rel="stylesheet" href="/assets/css/supersized.css">
-        <link rel="stylesheet" href="/assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/style1.css">
         <style type="text/css">
         login {
             font-size: larger;
@@ -35,10 +35,32 @@
 
         <div class="page-container">
             <h1><span style="color:red; font-style: ">修改<span style="font-size:40px;">Lovekey</span></span></h1>
-            <form action="/findPassWord/reset" method="post">
+            <form action="/findPassWord/reset" onsubmit="return validate_form(this)"method="post">
+                      <!--输入为空时提示 -->
+                     <script type="text/javascript">
+                        function validate_required(field,alerttxt)
+                        {
+                                with (field)
+                                  {
+                                  if (value==null||value=="")
+                                    {alert(alerttxt);return false}
+                                  else {return true}
+                                  }
+                                }
+
+                                function validate_form(thisform)
+                                {
+                                with (thisform)
+                                  {
+                                    if (validate_required(newPassword,"新密码为空")==false)
+                                        {newPassword.focus();return false}
+                                  }
+                                }
+                        </script> 
                 <input type="password" name="newPassWord" class="password" placeholder="请输入您新的密码！">
+<!--                  <input type="combobox" class="combobox" name="combobox" class="combobox" placeholder="请输入验证码！">  -->
                 <button type="submit" class="submit_button"  style="width:50% ;font-size:15px;">确认修改</button>
-                <div class="error"><span>+</span></div>
+               <!--  <div class="error"><span>+</span></div> -->
             </form>
 <!--             <div class="connect">
     <p>快捷登录</p>
@@ -52,8 +74,8 @@
         <!-- Javascript -->
         <script src="/assets/js/jquery-1.8.2.min.js" ></script>
         <script src="/assets/js/supersized.3.2.7.min.js" ></script>
-        <script src="/assets/js/supersized-init.js?v=1" ></script>
-        <script src="/assets/js/scripts.js" ></script>
+        <script src="/assets/js/supersized-init.js" ></script>
+        <script src="/assets/js/scripts1.js" ></script>
 
     </body>
 

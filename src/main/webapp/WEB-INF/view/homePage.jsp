@@ -17,6 +17,7 @@
 <button type="submit" class="submit_button">基本资料</button>
 </form>
 
+
 <form action="/friendsadd" method = "post">
  <input type="text" name="username" class="username" placeholder="请输入需要添加的好友名！">
 <button type="submit" class="submit_button">添加好友</button>
@@ -24,6 +25,20 @@
 
 <form action="/friendsinvite" method = "post">
 <button type="submit" class="submit_button">好友邀请</button>
+</form>
+
+
+<form action = "/match" method = "post">
+<button type="submit" class="submit_button">系统匹配</button>
+</form>
+
+
+<form action = "/match/toUserName" method = "post">
+<button type="submit" class="submit_button">账号匹配</button>
+</form>
+
+<form action = "/match/toCondition" method = "post">
+<button type="submit" class="submit_button">条件匹配</button>
 </form>
 
 

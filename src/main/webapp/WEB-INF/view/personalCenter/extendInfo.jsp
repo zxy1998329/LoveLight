@@ -102,11 +102,30 @@
 			<div >
 				<h1 style="margin-top: 50px;color: #848484;font-family: "Open Sans", Arial, sans-serif;">个人拓展资料</h1>
 				<div >
+					<!-- 头像上传start -->
+					<form action="/extendInfo/head" method="post" enctype="multipart/form-data">
+					<ul  style="list-style:none;font-size: 16px;color: #848484;font-family: "Open Sans", Arial, sans-serif;" >
+						<li style="margin-left: 10%; margin-top: 5%; font-size: 18px;">头像<br /> 
+						<img alt="头像" src="/pictures/head/${sessionScope.username }.jpg" width="100" height="100"
+						 ${sessionScope.sex eq "M" ? "onerror=\"this.src='/pictures/head/defultM.jpg'\""
+						 : "onerror=\"this.src='/pictures/head/defultF.jpg'\""
+						  }
+						 />
+						<input type="file" style="width: 30%"class="form-control" name="head">
+						<p>（目前只支持jpg格式文件，请谅解）</p>
+						</li>
+						<li style="margin-left: 10%; margin-top: 5%; font-size: 18px;"><input
+							type="submit" value="上传头像">
+						</li>
+					</ul>
+					</form>
+					<!-- 头像上传end -->
 					<form action="/extendInfo" method="post">
 					<ul  style="list-style:none;font-size: 16px;color: #848484;font-family: "Open Sans", Arial, sans-serif;" >
 					<c:set var="accountExtend" scope="page" value="${sessionScope.accountExtendInfo }"></c:set>
 						<li style="margin-left:10%;margin-top:5%;font-size:18px;">真实姓名: <input type="text" style="width:30%" class="form-control" name="trueName" value="${accountExtend.trueName }" ></li>
 						<li style="margin-left:10%;margin-top:5%;font-size:18px;">生日:<input type="text" style="width:30%" class="form-control" name="birthday" value="${accountExtend.birthday }" ></li>
+						<!-- 婚姻状况 -->
 						<li style="margin-left:10%;margin-top:5%;font-size:18px;">婚姻状况:
 						<input type="radio" style="margin-left: 3%" name="marry" value="Y" ${accountExtend.marry eq 'Y'  ? ' checked="checked" ' : ' ' } >已婚
 						<input style="margin-left: 1%"type="radio" name="marry" value="N" ${accountExtend.marry eq 'N'  ? ' checked="checked" ' : ' ' } >未婚

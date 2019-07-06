@@ -63,7 +63,8 @@ public class MatchServiceImpl implements MatchService {
 	@Override
 	public List<Account> dynamicSearch(String high, String salary, String area) {
 		// TODO Auto-generated method stub
-		return null;
+		List<Account> result = accountMapper.dynamicSearch(high, salary, area);
+		return result;
 	}
 
 }
