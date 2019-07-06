@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.loveLight.mapper.PhotoWallMapper">
+
+<insert id="insertRecord" parameterType="com.loveLight.entity.PhotoWall">
+	insert into
+		photo_wall (username, day, `time`, info, src)
+	values
+		(#{username}, #{day}, #{time}, #{info}, #{src})
+</insert>
+
+<select id="findRecordsByUsername" parameterType="String" resultType="com.loveLight.entity.PhotoWall">
+	select 
+		*
+	from
+		photo_wall
+	where
+		username = #{value}
+</select>
+
+</mapper>

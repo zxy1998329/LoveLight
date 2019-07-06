@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.loveLight.mapper.FriendsListMapper">
+
+<select id="findFriendsList"  parameterType="com.loveLight.entity.FriendsList" resultType ="com.loveLight.entity.FriendsList">
+	SELECT
+		f1,f2,f3,f4,f5
+	FROM
+		friends_list
+	WHERE
+		username = #{username}
+</select>
+
+<update id="insetFriends" parameterType="com.loveLight.entity.FriendsList">
+	update
+		friends_list
+	set
+		f1=#{f1},
+		f2=#{f2},
+		f3=#{f3},
+		f4=#{f4},
+		f5=#{f5}
+	where
+		username=#{username}
+
+</update>
+
+<update id="insetInvite" parameterType="com.loveLight.entity.FriendsList">
+	update
+		friends_list
+	set
+		f_invi1=#{fInvi1},
+		f_invi2=#{fInvi2},
+		f_invi3=#{fInvi3}
+	where
+		username=#{username}
+
+</update>
+
+<select id="findByUsername" parameterType="String"  resultType="com.loveLight.entity.FriendsList">
+	SELECT
+		*
+	FROM
+		friends_list
+	WHERE
+		username = #{username}
+</select>
+
+
+
+ </mapper>
