@@ -95,7 +95,7 @@ public class FriendsListServiceImpl implements FriendsListService {
 			friendsListMapper.insetInvite(friendsList1);
 			return 3;
 		}
-		else return 0;
+		else return -1;
 		
 		
 	}

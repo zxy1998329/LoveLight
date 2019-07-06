@@ -26,13 +26,20 @@ public class FriendsManagementController {
 		
 		int i = friendsListService.AddFriend(friendsList, username);
 		int j = friendsListService.AddInvite(friendsList, username);
-		if(i<6 &&j!=0) {
+		if(i>0 &&j>0) {
 			System.out.println("添加成功");
 			System.out.println(i);
 			return "homePage";
 		}
 		else {
-			System.out.println("添加失败");
+			if(i<0) {
+				System.out.println("好友列表已满");
+			}
+			if(j<0) {
+				System.out.println("对方已不能接受好友申请");
+			}
+			
+			
 			return "homePage";
 		}
 		
@@ -62,13 +69,13 @@ public class FriendsManagementController {
 		int i = friendsListService.AddFriend(friendsList,friendsList.getfInvi1());
 		friendsList.setfInvi1(null);
 		friendsListMapper.insetInvite(friendsList);
-		if(i<6) {
+		if(i>0) {
 			System.out.println("添加成功");
 			System.out.println(i);
 			return "homePage";
 		}
 		else {
-			System.out.println("添加失败");
+			System.out.println("添加失败，好友列表已满");
 			return "homePage";
 		}
 		
@@ -90,13 +97,13 @@ public class FriendsManagementController {
 		int i = friendsListService.AddFriend(friendsList,friendsList.getfInvi2());
 		friendsList.setfInvi2(null);
 		friendsListMapper.insetInvite(friendsList);
-		if(i<6) {
+		if(i>0) {
 			System.out.println("添加成功");
 			System.out.println(i);
 			return "homePage";
 		}
 		else {
-			System.out.println("添加失败");
+			System.out.println("添加失败，好友列表已满");
 			return "homePage";
 		}
 		
@@ -118,13 +125,14 @@ public class FriendsManagementController {
 		int i = friendsListService.AddFriend(friendsList,friendsList.getfInvi3());
 		friendsList.setfInvi3(null);
 		friendsListMapper.insetInvite(friendsList);
-		if(i<6) {
+		if(i>0) {
 			System.out.println("添加成功");
 			System.out.println(i);
 			return "homePage";
 		}
 		else {
-			System.out.println("添加失败");
+			System.out.println("添加失败，好友列表已满");
+			
 			return "homePage";
 		}
 		
