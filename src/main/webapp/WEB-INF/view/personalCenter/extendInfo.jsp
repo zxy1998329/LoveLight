@@ -127,7 +127,8 @@
 									</ul></li>
 								<li><a href="activity.html">活动天地</a></li>
 								<li><a href="blog.html">爱的BLOG</a></li>
-								<li><a href="#">个人中心</a>
+								<li>
+								<a href="#">个人中心</a>
 									<ul class="fh5co-sub-menu">
 										<li><a href="/baseInfo">个人基本资料</a></li>
 										<li><a href="/extendInfo">个人拓展资料</a></li>
@@ -136,24 +137,26 @@
 										<li><a href="recent.html">动态</a></li>
 									</ul></li>
 								<li><a href="indexLogin.html" style="font-size: 15px;">登录/注册</a></li>
-								<li><a href="friendslist.html" style="font-size: 15px;">好友列表</a></li>
+								<li><a href="/friendslist1" style="font-size: 15px;">好友列表</a></li>
 								<li><a href="vip.html" style="font-size: 15px; color: red;">会员中心</a></li>
 							</ul>
+
 						</nav>
 					</div>
 				</div>
 			</header>
-			<!--输入为空时提示 -->
-			<script type="text/javascript">
-				function validate_required(field, alerttxt) {
-					with (field) {
-						if (value == null || value == "") {
-							alert(alerttxt);
-							return false
-						} else {
-							return true
-						}
-					}
+			
+	<!--输入为空时提示 -->
+	<script type="text/javascript">
+		function validate_required(field,alerttxt)
+		{
+				with (field)
+				  {
+				  if (value==null||value=="")
+				    {alert(alerttxt);return false}
+				  else {return true}
+				  }
+
 				}
 
 				function validate_form(thisform) {
@@ -192,9 +195,9 @@
 									style="list-style: none; font-size: 16px; color: #848484; font-family:"
 									OpenSans", Arial, sans-serif;" >
 									<li style="margin-left: 10%; margin-top: 5%; font-size: 18px;">头像<br />
-										<img alt="头像"
-										src="/pictures/head/${sessionScope.username }.jpg?t=<%=new Date().getTime() %>" width="100"
-										height="100"
+										<img alt="头像" style=" border-radius:50%;"
+										src="/pictures/head/${sessionScope.username }.jpg?t=<%=new Date().getTime() %>" 
+										width="100" height="100"
 										${sessionScope.sex eq "M" ? "onerror=\"this.src='/pictures/head/defultM.jpg'\""
 						 : "onerror=\"this.src='/pictures/head/defultF.jpg'\""
 						  } />

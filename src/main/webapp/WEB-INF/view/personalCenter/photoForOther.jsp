@@ -69,8 +69,8 @@
 						<h2>${username }'s personal photo</h2>
 					</div>
 				</div>
+				<!-- 循环显示图片 -->
 				<c:set var="pwList" value="${sessionScope.pwList }"></c:set>
-			
 				<div class="row">
 				<c:forEach items="${pwList }" var="photo">
 					<div class="col-md-4">
@@ -85,13 +85,28 @@
 					</div>
 				</c:forEach>
 				</div>
-		
+			<!-- 循环显示图片 -->
+			
 			</div>
 		</div>
-		
+			<!-- 返回按钮 -->
+			<div class="row">
+				<div
+					class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+					<a href="/friendslist1" style="
+					font-size: 50px;
+    				font-weight: 300;
+    				color: #F69D9D;
+					">
+					
+					back
+					</a>
+				</div>
+			</div>
+			<!-- 返回按钮 -->
 
 
-		<footer>
+			<footer>
 			<div id="footer">
 				<div class="container">
 					<div class="row">

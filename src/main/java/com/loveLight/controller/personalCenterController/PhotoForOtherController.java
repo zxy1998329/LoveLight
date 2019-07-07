@@ -29,10 +29,10 @@ public class PhotoForOtherController {
 
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public String photowall(HttpSession session) {
-		String username = (String) session.getAttribute("username");//获取用户名
+	public String photowall(HttpSession session, 
+			@RequestParam("otherUsername") String otherUsername) {
 		//建立照片列表session
-		List<PhotoWall> pwList = photoWallMapper.findRecordsByUsername(username);
+		List<PhotoWall> pwList = photoWallMapper.findRecordsByUsername(otherUsername);
 		session.setAttribute("pwList", pwList);
 		return "personalCenter/photoForOther";
 	}
