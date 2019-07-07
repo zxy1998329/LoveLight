@@ -13,6 +13,8 @@
 		username = #{username}
 </select>
 
+
+
 <update id="insetFriends" parameterType="com.loveLight.entity.FriendsList">
 	update
 		friends_list

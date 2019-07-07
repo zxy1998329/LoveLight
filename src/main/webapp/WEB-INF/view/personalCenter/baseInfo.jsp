@@ -90,6 +90,7 @@
 							</ul>
 						</li>
 						<li><a href="blog.html" style="font-size:15px;">登录/注册</a></li>
+						<li><a href="/friendslist1" style="font-size:15px;">好友列表</a></li>
 					</ul>
 				</nav>
 			</div>

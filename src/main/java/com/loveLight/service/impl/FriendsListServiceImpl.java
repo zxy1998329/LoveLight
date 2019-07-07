@@ -100,6 +100,12 @@ public class FriendsListServiceImpl implements FriendsListService {
 		
 	}
 	
+	@Override
+	public FriendsList findFriends(String username) {
+		FriendsList  friendsList = friendsListMapper.findByUsername(username);
+		return friendsList;
+	}
+	
 	
 
 }

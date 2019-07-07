@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -30,21 +31,21 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
 
 <!-- Animate.css -->
-<link rel="stylesheet" href="/assets/css/animate.css">
+<link rel="stylesheet" href="assets/css/animate.css">
 <!-- Icomoon Icon Fonts-->
-<link rel="stylesheet" href="/assets/css/icomoon.css">
+<link rel="stylesheet" href="assets/css/icomoon.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="/assets/css/bootstrap.css">
+<link rel="stylesheet" href="assets/css/bootstrap.css">
 <!-- Superfish -->
-<link rel="stylesheet" href="/assets/css/superfish.css">
+<link rel="stylesheet" href="assets/css/superfish.css">
 <!-- Magnific Popup -->
-<link rel="stylesheet" href="/assets/css/magnific-popup.css">
+<link rel="stylesheet" href="assets/css/magnific-popup.css">
 
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 
 
 <!-- Modernizr JS -->
-<script src="js/modernizr-2.6.2.min.js"></script>
+<script src="assets/js/modernizr-2.6.2.min.js"></script>
 <!-- FOR IE9 below -->
 <!--[if lt IE 9]>
 <script src="js/respond.min.js"></script>
@@ -93,6 +94,7 @@
 		border: 1px solid #000;
 		margin: 20px 0 20px 50px;
 	}
+
 
 </style>
 
@@ -149,40 +151,78 @@
 			<input style="margin-left:10%;margin-top:5%;font-size:18px;" type="text" name="username" class="username" placeholder="请输入需要添加的好友名！">
 			<button  style="margin-left:10%;margin-top:5%;font-size:18px;" type="submit" class="disp">添加好友</button>
 		</form>
+		<br><br>
+		
 
-		<form action="/friendsinvite" method = "post">
-			<button style="margin-left:10%;margin-top:5%;font-size:18px;" type="submit" class="submit_button" onclick="isHidden('haoyouyaoqing')">好友邀请</button>
-		</form>
 		<script>
 				function isHidden(oDiv){
 			      var vDiv = document.getElementById(oDiv);
 			      vDiv.style.display = (vDiv.style.display == 'none')?'block':'none';
 			    }
 			</script>
+		
+		<div id="main" style="width: 70%;">
+			
+		
+			<div id="right" style="display:inline-block;height: 700px;border: 2px;border-style: solid;width: 70%;float: left;">
+				<form action="/friendslist2" >
+				<button style="margin-left:40%;margin-top:5%;font-size:18px;" type="submit" class="submit_button" onclick="isHidden('haoyouyaoqing')">好友列表</button>
+				</form>
+				<form action="/allow1">
+					<p style="margin-left:10%;font-size:18px;"> 好友1:${sessionScope.f1 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
+				</form>
+				<form action="/allow1">
+					<p style="margin-left:10%;font-size:18px;"> 好友2:${sessionScope.f2 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
+				</form>
+				<form action="/allow1">
+					<p style="margin-left:10%;font-size:18px;"> 好友3:${sessionScope.f3 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
+				</form>
+							<form action="/allow1">
+					<p style="margin-left:10%;font-size:18px;"> 好友4:${sessionScope.f4 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
+				</form>
+				<form action="/allow1">
+					<p style="margin-left:10%;font-size:18px;"> 好友5:${sessionScope.f5 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
+				</form>
+			
 
-		<div id="haoyouyaoqing" style="display: ;">
-			<p style="margin-left:10%;font-size:18px;"> 好友请求1:${sessionScope.invite1 }</p>
-			<form action="/allow1">
-			<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">同意</button>
-			</form>
-			<form action="/refuse1">
-			<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">拒绝</button>
-			</form>
-			<p style="margin-left:10%;font-size:18px;"> 好友请求2:${sessionScope.invite2 }</p>
-			<form action="/allow2">
-			<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">同意</button>
-			</form>
-			<form action="/refuse2">
-			<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">拒绝</button>
-			</form>
-			<p style="margin-left:10%;font-size:18px;"> 好友请求3:${sessionScope.invite3 }</p>
-			<form action="/allow3">
-			<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">同意</button>
-			</form>
-			<form action="/refuse3">
-			<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">拒绝</button>
-			</form>
+			</div>
+
+			<div id="left" style="display:inline-block;width: 30%;height: 700px;border: 2px;border-style: solid;float: left;">
+				<form action="/friendsinvite" method = "post" >
+				<button style="margin-left:10%;margin-top:5%;font-size:18px;" type="submit" class="submit_button" onclick="isHidden('haoyouyaoqing')">好友邀请</button>
+				<c:if test="${sessionScope.infoController==3 }">
+				<p> 添加好友成功！</p>
+				</c:if>	
+				<c:if test="${sessionScope.infoController==2 }">
+				<p> 您的好友已达上限！</p>
+				</c:if>	
+				</form>
+				<p style="margin-left:10%;font-size:18px;"> 好友请求1:${sessionScope.invite1 }</p>
+				<form action="/allow1">
+				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">同意</button>
+				</form>
+				<form action="/refuse1">
+				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">拒绝</button>
+				</form>
+				<p style="margin-left:10%;font-size:18px;"> 好友请求2:${sessionScope.invite2 }</p>
+				<form action="/allow2">
+				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">同意</button>
+				</form>
+				<form action="/refuse2">
+				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">拒绝</button>
+				</form>
+				<p style="margin-left:10%;font-size:18px;"> 好友请求3:${sessionScope.invite3 }</p>
+				<form action="/allow3">
+				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">同意</button>
+				</form>
+				<form action="/refuse3">
+				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">拒绝</button>
+				</form>
+			</div>
 		</div>
+
+		
+
 	</div>
 
 
@@ -218,7 +258,7 @@
 <!-- Google Map -->
 <!---<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>--->
 <!-- jQuery -->
-<script src="/assets/dist/scripts.min.js"></script>
+<script src="assets/dist/scripts.min.js"></script>
 </body>
 </html>
 

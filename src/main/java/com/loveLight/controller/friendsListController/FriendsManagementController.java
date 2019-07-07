@@ -22,6 +22,19 @@ public class FriendsManagementController {
 
 	@RequestMapping(value = "/friendslist1")
 	public String friendslist(HttpSession session ) {
+		session.setAttribute("infoController", -1);//-1 默认值  0申请失败  1申请成功 2添加失败  3添加成功
+		return "friendsList/friendslist";
+	}
+	
+	@RequestMapping(value = "/friendslist2")
+	public String friendslist2(HttpSession session ) {
+		FriendsList friendsList = friendsListService.findFriends((String)session.getAttribute("username"));
+		
+		session.setAttribute("f1", friendsList.getF1());
+		session.setAttribute("f2", friendsList.getF2());
+		session.setAttribute("f3", friendsList.getF3());
+		session.setAttribute("f4", friendsList.getF4());
+		session.setAttribute("f5", friendsList.getF5());
 		return "friendsList/friendslist";
 	}
 	
@@ -33,16 +46,17 @@ public class FriendsManagementController {
 		int i = friendsListService.AddFriend(friendsList, username);
 		int j = friendsListService.AddInvite(friendsList, username);
 		if(i>0 &&j>0) {
+			session.setAttribute("infoController", 1);
 			System.out.println("添加成功");
 			System.out.println(i);
 			return "friendsList/friendslist";
 		}
 		else {
 			if(i<0) {
-				System.out.println("好友列表已满");
+				session.setAttribute("infoController", 0);
 			}
 			if(j<0) {
-				System.out.println("对方已不能接受好友申请");
+				session.setAttribute("infoController", 0);
 			}
 			
 			
@@ -77,12 +91,14 @@ public class FriendsManagementController {
 		friendsListMapper.insetInvite(friendsList);
 		session.setAttribute("invite1",null);
 		if(i>0) {
+			session.setAttribute("infoController", 3);
 			System.out.println("添加成功");
 			System.out.println(i);
 			return "friendsList/friendslist";
 		}
 		else {
 			System.out.println("添加失败，好友列表已满");
+			session.setAttribute("infoController", 2);
 			return "friendsList/friendslist";
 		}
 		
@@ -95,6 +111,7 @@ public class FriendsManagementController {
 		friendsList.setfInvi1(null);
 		friendsListMapper.insetInvite(friendsList);
 		session.setAttribute("invite1",null);
+		session.setAttribute("infoController", 2);
 		return "friendsList/friendslist";
 	}
 	
@@ -109,10 +126,13 @@ public class FriendsManagementController {
 		if(i>0) {
 			System.out.println("添加成功");
 			System.out.println(i);
+			session.setAttribute("infoController", 3);
 			return "friendsList/friendslist";
+			
 		}
 		else {
 			System.out.println("添加失败，好友列表已满");
+			session.setAttribute("infoController", 2);
 			return "friendsList/friendslist";
 		}
 		
@@ -125,6 +145,7 @@ public class FriendsManagementController {
 		friendsList.setfInvi2(null);
 		friendsListMapper.insetInvite(friendsList);
 		session.setAttribute("invite2",null);
+		session.setAttribute("infoController", 2);
 		return "friendsList/friendslist";
 	}
 	
@@ -139,10 +160,13 @@ public class FriendsManagementController {
 		if(i>0) {
 			System.out.println("添加成功");
 			System.out.println(i);
+			session.setAttribute("infoController", 3);
+			
 			return "friendsList/friendslist";
 		}
 		else {
 			System.out.println("添加失败，好友列表已满");
+			session.setAttribute("infoController", 2);
 			
 			return "friendsList/friendslist";
 		}
@@ -156,6 +180,7 @@ public class FriendsManagementController {
 		friendsList.setfInvi3(null);
 		friendsListMapper.insetInvite(friendsList);
 		session.setAttribute("invite3",null);
+		session.setAttribute("infoController", 2);
 		return "friendsList/friendslist";
 	}
 }
