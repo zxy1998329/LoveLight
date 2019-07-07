@@ -4,19 +4,26 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.loveLight.mapper.PhotoWallMapper">
 
+<delete id="deleteRecordBySrc" parameterType="String">
+	DELETE FROM
+		photo_wall
+	WHERE
+		src = #{value}
+</delete>
+
 <insert id="insertRecord" parameterType="com.loveLight.entity.PhotoWall">
-	insert into
+	INSERT INTO
 		photo_wall (username, day, `time`, info, src)
-	values
+	VALUES
 		(#{username}, #{day}, #{time}, #{info}, #{src})
 </insert>
 
 <select id="findRecordsByUsername" parameterType="String" resultType="com.loveLight.entity.PhotoWall">
-	select 
+	SELECT 
 		*
-	from
+	FROM
 		photo_wall
-	where
+	WHERE
 		username = #{value}
 </select>
 

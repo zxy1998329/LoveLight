@@ -1,7 +1,3 @@
-
-
-
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -63,71 +59,32 @@
 		<div id="fh5co-page">
 	
 
-	<header id="fh5co-header-section" class="sticky-banner">
-		<div class="container">
-			<div class="nav-header">
-				<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-				<h1 id="fh5co-logo"><a href="index.html">LoveLight</a></h1>
-				<!-- START #fh5co-menu-wrap -->
-				<nav id="fh5co-menu-wrap" role="navigation">
-					<ul class="sf-menu" id="fh5co-primary-menu">
-						<li class="active"><a href="index.html" >lovelight</a></li>
-						<li><a href="#" class="fh5co-sub-ddown">恋爱天堂</a></li>
-						<li><a href="#">遇见Ta</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="match.html">系统匹配</a></li>
-								<li><a href="conditionFind.html">按条件查找</a></li>
-								<li><a href="usernameFind.html">按账号查找</a></li>
-							</ul>
-						</li>
-						<li><a href="activity.html">活动天地</a></li>
-						<li><a href="blog.html">爱的BLOG</a></li>
-						<li>
-							<a href="#">个人中心</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="baseInfo.html">个人基本资料</a></li>
-								<li><a href="personal.html">个人拓展资料</a></li>
-								<li><a href="realNameAuthentication.html">实名认证</a></li>
-								<li><a href="photo.html">照片墙</a></li>
-								<li><a href="recent.html">动态</a></li>
-							</ul>
-						</li>
-						<li><a href="indexLogin.html" style="font-size:15px;">登录/注册</a></li>
-						<li><a href="friendslist.html" style="font-size:15px;">好友列表</a></li>
-						<li><a href="vip.html" style="font-size:15px;color: red;">会员中心</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-
-		<!-- end:header-top -->
+	
+	
 
 		<div id="fh5co-gallery">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h2>personal photo</h2>
+						<h2>${username }'s personal photo</h2>
 					</div>
 				</div>
-				
-				<!-- 显示图片 -->
 				<c:set var="pwList" value="${sessionScope.pwList }"></c:set>
+			
 				<div class="row">
 				<c:forEach items="${pwList }" var="photo">
-					<div class="col-md-4"  style="text-align: center">
+					<div class="col-md-4">
+					
 						<div class="gallery animate-box" >
+
 							<a class="gallery-img image-popup image-popup" href="/assets/images/gallery-1.jpg">
 							<img src="${photo['src'] }" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 							<br/>
 							<h3 align="center">${photo.info }</h3>
 						</div>
-						<a href="/photoWall/delete?src=${photo.src }" align="center">delete</a>
 					</div>
-					
 				</c:forEach>
 				</div>
-				<!-- 显示图片 -->
 		
 			</div>
 		</div>
@@ -136,15 +93,6 @@
 
 		<footer>
 			<div id="footer">
-				<div style="text-align:center">
-				<!--  上传图片功能 -->
-				<form action="/photoWall" method="post" enctype=multipart/form-data>
-					输入你的描述:<input type="text" name="info" />
-					<input type="file" name="photoWall" style="margin:0 auto" />
-					<input type="submit"value="上传照片">
-				</form>
-				</div>
-				
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12 text-center">
