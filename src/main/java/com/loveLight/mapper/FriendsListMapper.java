@@ -12,4 +12,6 @@ public interface FriendsListMapper {
 	
 	void insetInvite(FriendsList friendslist); //发送好友申请
 	
+	int insertList(String username);
+	
 }

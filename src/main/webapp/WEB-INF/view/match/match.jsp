@@ -121,7 +121,7 @@
 										&nbsp;&nbsp;收入：<c:out value="${account.accountExtend.salary }"></c:out>	
 									</c:if>
 									</h3>
-									<a href="#">添加好友</a>
+									<a href="/friendsadd?addname=<c:out value="${account.username}"></c:out>">添加好友</a>
 							</div>
 						</div>
 					</c:forEach>

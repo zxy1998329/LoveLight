@@ -18,7 +18,7 @@ public class LoginController {
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String get() {
-		return "index";
+		return "redirect:index.jsp";
 	}
 	
 	
@@ -32,10 +32,10 @@ public class LoginController {
 			session.setAttribute("username", row1);
 
 			session.setAttribute("reset", 1);
-			return "index";
+			return "redirect:index.jsp";
 		}
 		else {
-			return "indexLogin";
+			return "redirect:indexLogin.jsp";
 		}
 		
 		

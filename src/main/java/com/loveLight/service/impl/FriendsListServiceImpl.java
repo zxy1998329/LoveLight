@@ -72,31 +72,35 @@ public class FriendsListServiceImpl implements FriendsListService {
 	}
 
 	@Override
-	public int AddInvite(FriendsList friendsList, String inviteName) {
-		
+	public int AddInvite(FriendsList friendsList, String inviteName) {//inviteName是要添加的好友名
+			//friendsList是现在执行添加操作的用户好友列表    friendslist1是对方的好友列表
 		 String username = friendsList.getUsername(); 
 		 FriendsList friendsList1 = friendsListMapper.findByUsername(inviteName);		 
 		
 		 System.out.println(friendsList1);
 		 
-		if(friendsList1.getfInvi1()==null) {
-			friendsList1.setfInvi1(username);
-			friendsListMapper.insetInvite(friendsList1);
-			return 1;
-			
-		}
-		else if(friendsList1.getfInvi2()==null) {
-			friendsList1.setfInvi2(username);
-			friendsListMapper.insetInvite(friendsList1);
-			return 2;
-		}
-		else if(friendsList1.getfInvi3()==null) {
-			friendsList1.setfInvi3(username);
-			friendsListMapper.insetInvite(friendsList1);
-			return 3;
-		}
-		else return -1;
-		
+		 if(friendsList1==null) {
+			 friendsListMapper.insertList(inviteName);
+			 friendsList1 = friendsListMapper.findByUsername(inviteName);
+		 }
+		 
+		 if(friendsList1.getfInvi1()==null) {
+				friendsList1.setfInvi1(username);
+				friendsListMapper.insetInvite(friendsList1);
+				return 1;
+				
+			}
+			else if(friendsList1.getfInvi2()==null) {
+				friendsList1.setfInvi2(username);
+				friendsListMapper.insetInvite(friendsList1);
+				return 2;
+			}
+			else if(friendsList1.getfInvi3()==null) {
+				friendsList1.setfInvi3(username);
+				friendsListMapper.insetInvite(friendsList1);
+				return 3;
+			}
+			else return -1;
 		
 	}
 	
