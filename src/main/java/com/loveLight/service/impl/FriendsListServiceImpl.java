@@ -100,6 +100,11 @@ public class FriendsListServiceImpl implements FriendsListService {
 		
 	}
 	
-	
+	public FriendsList searchFriend(String username) {
+		
+		FriendsList f = friendsListMapper.findByUsername(username);
+		return f;
+		
+	}
 
 }
