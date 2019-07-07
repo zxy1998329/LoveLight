@@ -100,14 +100,14 @@ public class FriendsListServiceImpl implements FriendsListService {
 		
 	}
 	
-<<<<<<< HEAD
+	@Override
 	public FriendsList searchFriend(String username) {
 		
 		FriendsList f = friendsListMapper.findByUsername(username);
 		return f;
 		
 	}
-=======
+
 	@Override
 	public FriendsList findFriends(String username) {
 		FriendsList  friendsList = friendsListMapper.findByUsername(username);
@@ -115,6 +115,5 @@ public class FriendsListServiceImpl implements FriendsListService {
 	}
 	
 	
->>>>>>> branch 'dev' of https://github.com/zxy1998329/LoveLight.git
 
 }
