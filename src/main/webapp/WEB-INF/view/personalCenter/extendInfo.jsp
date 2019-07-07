@@ -132,7 +132,7 @@
 							</ul>
 						</li>
 						<li><a href="indexLogin.html" style="font-size:15px;">登录/注册</a></li>
-						<li><a href="friendslist.html" style="font-size:15px;">好友列表</a></li>
+						<li><a href="/friendslist1" style="font-size:15px;">好友列表</a></li>
 						<li><a href="vip.html" style="font-size:15px;color: red;">会员中心</a></li>
 					</ul>
 				</nav>

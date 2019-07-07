@@ -160,7 +160,7 @@
 			    }
 			</script>
 
-		<div id="haoyouyaoqing" style="display: none;">
+		<div id="haoyouyaoqing" style="display: ;">
 			<p style="margin-left:10%;font-size:18px;"> 好友请求1:${sessionScope.invite1 }</p>
 			<form action="/allow1">
 			<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">同意</button>
