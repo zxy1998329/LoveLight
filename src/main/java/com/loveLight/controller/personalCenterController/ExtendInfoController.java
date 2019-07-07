@@ -57,7 +57,8 @@ public class ExtendInfoController {
 	
 	//头像处理
 	@RequestMapping(value="/head", method=RequestMethod.POST)
-	public String uploadHead(HttpSession session, HttpServletRequest request, @RequestParam("head") MultipartFile head ) throws IOException {
+	public String uploadHead(HttpSession session, HttpServletRequest request, 
+			@RequestParam("head") MultipartFile head ) throws IOException {
 		//获得工程项目图片头像的文件目录
 		String path = request.getServletContext().getRealPath("/pictures/head/");
 		if(!head.isEmpty()) {
@@ -65,7 +66,7 @@ public class ExtendInfoController {
 					new File(path+(String)session.getAttribute("username")+".jpg" )  );
 		}
 		
-		return "personalCenter/success";
+		return "personalCenter/extendInfo";
 	}
 	
 }

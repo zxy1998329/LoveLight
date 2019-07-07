@@ -78,10 +78,10 @@
 						<li>
 							<a href="#">个人中心</a>
 							<ul class="fh5co-sub-menu">
-								<li><a href="baseInfo.html">个人基本资料</a></li>
-								<li><a href="personal.html">个人拓展资料</a></li>
+								<li><a href="/baseInfo">个人基本资料</a></li>
+								<li><a href="/extendInfo">个人拓展资料</a></li>
 								<li><a href="realNameAuthentication.html">实名认证</a></li>
-								<li><a href="photo.html">照片墙</a></li>
+								<li><a href="/photoWall">照片墙</a></li>
 								<li><a href="recent.html">动态</a></li>
 							</ul>
 						</li>

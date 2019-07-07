@@ -100,11 +100,21 @@ public class FriendsListServiceImpl implements FriendsListService {
 		
 	}
 	
+<<<<<<< HEAD
 	public FriendsList searchFriend(String username) {
 		
 		FriendsList f = friendsListMapper.findByUsername(username);
 		return f;
 		
 	}
+=======
+	@Override
+	public FriendsList findFriends(String username) {
+		FriendsList  friendsList = friendsListMapper.findByUsername(username);
+		return friendsList;
+	}
+	
+	
+>>>>>>> branch 'dev' of https://github.com/zxy1998329/LoveLight.git
 
 }
