@@ -75,9 +75,9 @@
 						<li><a href="#" class="fh5co-sub-ddown">恋爱天堂</a></li>
 						<li><a href="#">遇见Ta</a>
 							<ul class="fh5co-sub-menu">
-								<li><a href="match.html">系统匹配</a></li>
-								<li><a href="conditionFind.html">按条件查找</a></li>
-								<li><a href="usernameFind.html">按账号查找</a></li>
+								<li><a href="/match">系统匹配</a></li>
+								<li><a href="/match/toCondition">按条件查找</a></li>
+								<li><a href="/match/toUserName">按账号查找</a></li>
 							</ul>
 						</li>
 						<li><a href="activity.html">活动天地</a></li>
@@ -89,7 +89,7 @@
 								<li><a href="/extendInfo">个人拓展资料</a></li>
 								<li><a href="realNameAuthentication.html">实名认证</a></li>
 								<li><a href="/photoWall">照片墙</a></li>
-								<li><a href="recent.html">动态</a></li>
+								<li><a href="/toPersonal">动态</a></li>
 							</ul>
 						</li>
 						<li><a href="indexLogin.html" style="font-size:15px;">登录/注册</a></li>
