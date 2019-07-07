@@ -50,6 +50,10 @@
 		username = #{username}
 </select>
 
-
+<insert id="insertList">
+	insert into
+		friends_list(username)
+	values(#{value})
+</insert>
 
  </mapper>

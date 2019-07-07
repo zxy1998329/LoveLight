@@ -11,4 +11,7 @@ public interface FriendsListMapper {
 	FriendsList findByUsername(String username);
 	
 	void insetInvite(FriendsList friendslist); //发送好友申请
+	
+	int insertList(String username);
+	
 }

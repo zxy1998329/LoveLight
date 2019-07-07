@@ -8,5 +8,10 @@ public interface FriendsListService {
 	int AddFriend(FriendsList friendsList,String username);
 	int FindInvite(FriendsList friendsList);
 	int AddInvite(FriendsList friendsList,String username);
+
+	
+	FriendsList searchFriend(String username);
+
 	FriendsList findFriends(String username);
+
 }

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page import="java.io.PrintWriter"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -68,9 +70,9 @@
 						<li><a href="#" class="fh5co-sub-ddown">恋爱天堂</a></li>
 						<li><a href="#">遇见Ta</a>
 							<ul class="fh5co-sub-menu">
-								<li><a href="/match">系统匹配</a></li>
-								<li><a href="/match/toCondition">按条件查找</a></li>
-								<li><a href="/match/toUserName">按账号查找</a></li>
+								<li><a href="match.html">系统匹配</a></li>
+								<li><a href="conditionFind.html">按条件查找</a></li>
+								<li><a href="usernameFind.html">按账号查找</a></li>
 							</ul>
 						</li>
 						<li><a href="activity.html">活动天地</a></li>
@@ -78,14 +80,15 @@
 						<li>
 							<a href="#">个人中心</a>
 							<ul class="fh5co-sub-menu">
-								<li><a href="/baseInfo">个人基本资料</a></li>
-								<li><a href="/extendInfo">个人拓展资料</a></li>
+								<li><a href="baseInfo.html">个人基本资料</a></li>
+								<li><a href="personal.html">个人拓展资料</a></li>
 								<li><a href="realNameAuthentication.html">实名认证</a></li>
-								<li><a href="/photoWall">照片墙</a></li>
+								<li><a href="photo.html">照片墙</a></li>
 								<li><a href="recent.html">动态</a></li>
 							</ul>
 						</li>
 						<li><a href="indexLogin.html" style="font-size:15px;">登录/注册</a></li>
+						<li><a href="friendslist.html" style="font-size:15px;">好友列表</a></li>
 						<li><a href="vip.html" style="font-size:15px;color: red;">会员中心</a></li>
 					</ul>
 				</nav>
@@ -102,11 +105,7 @@
 				with (field)
 				  {
 				  if (value==null||value=="")
-					  {
-					  	field=null;
-					    {alert(alerttxt);return false}
-					  }
-					 
+				    {alert(alerttxt);return false}
 				  else {return true}
 				  }
 				}
@@ -115,13 +114,10 @@
 				{
 				with (thisform)
 				  {
-					if (validate_required(high,"身高为空")==false)
-// 					    {high.focus();return false}
-						
-					if (validate_required(salary,"月薪为空")==false)
-// 					    {salary.focus();return false}
-					if (validate_required(area,"地区为空")==false)
-// 					    {area.focus();return false}
+					if (validate_required(username,"真实姓名为空")==false)
+					    {username.focus();return false}
+					if (validate_required(personalID,"证件号码为空")==false)
+					    {personalID.focus();return false}
 				  }
 				}
 		</script>
@@ -129,14 +125,12 @@
 	<div class="container" ;>
 		<div class="animate-box">
 			<div >
-				<h1 style="margin-top: 50px;color: #848484;font-family: "Open Sans", Arial, sans-serif;">条件匹配</h1>
+				<h1 style="margin-top: 50px;color: #848484;font-family: "Open Sans", Arial, sans-serif;">留言</h1>
 				<div >
-					<form action="/match/finByCon" onsubmit="return validate_form(this)" method="post">
+					<form action="/liuyan" onsubmit="return validate_form(this)" method="post">
 					<ul  style="list-style:none;font-size: 16px;color: #848484;font-family: "Open Sans", Arial, sans-serif;" >
-						<li style="margin-left:10%;margin-top:5%;font-size:18px;">身高: <input id="t1" type="text" style="width:30%" class="form-control" name="high"></li>
-						<li style="margin-left:10%;margin-top:5%;font-size:18px;">收入:<input id="t1" type="text" style="width:30%" class="form-control" name="salary"></li>
-						<li style="margin-left:10%;margin-top:5%;font-size:18px;">地区:<input id="t2" type="text" style="width:30%"class="form-control" name="area"></li>
-						<li style="margin-left:20%;margin-top:5%;font-size:20px;"><button  type="submit" name="update">匹配</button></li>
+						<li style="margin-left:10%;margin-top:5%;font-size:20px;">留言内容：<textarea id="t5" style="width:70%; height:100px;"  class="form-control" name="liuyan"></textarea></li>
+						<li style="margin-left:20%;margin-top:5%;font-size:20px;"><button  type="submit" name="update">提交</button></li>
 					</ul>
 					</form>
 				</div>	
@@ -153,7 +147,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<h2>Jack &amp; Rose</h2>
+					<h2>LoveLight</h2>
 				</div>
 				<div class="col-md-6 col-md-offset-3 text-center">
 					<p class="fh5co-social-icons">

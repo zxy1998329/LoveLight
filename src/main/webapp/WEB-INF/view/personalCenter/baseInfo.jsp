@@ -80,13 +80,13 @@
 						<li><a href="guest.html">活动天地</a></li>
 						<li><a href="gallery.html">爱的BLOG</a></li>
 						<li>
-							<a href="blog.html">个人中心</a>
+							<a href="#">个人中心</a>
 							<ul class="fh5co-sub-menu">
 								<li><a href="/baseInfo">个人基本资料</a></li>
 								<li><a href="/extendInfo">个人拓展资料</a></li>
-								<li><a href="#">账号管理</a></li>
-								<li><a href="#">实名认证</a></li>
-								<li><a href="#">个人空间</a></li>
+								<li><a href="realNameAuthentication.html">实名认证</a></li>
+								<li><a href="/photoWall">照片墙</a></li>
+								<li><a href="recent.html">动态</a></li>
 							</ul>
 						</li>
 						<li><a href="blog.html" style="font-size:15px;">登录/注册</a></li>

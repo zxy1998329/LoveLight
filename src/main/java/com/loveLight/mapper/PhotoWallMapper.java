@@ -10,4 +10,6 @@ public interface PhotoWallMapper {
 	
 	List<PhotoWall> findRecordsByUsername(String username);
 	
+	int deleteRecordBySrc(String src);
+	
 }

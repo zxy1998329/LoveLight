@@ -11,4 +11,5 @@ public class testController {
 	String testBase() {
 		return "friendslist";
 	}
+	
 }

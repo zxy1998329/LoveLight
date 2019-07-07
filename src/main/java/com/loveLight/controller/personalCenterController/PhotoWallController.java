@@ -1,5 +1,6 @@
 package com.loveLight.controller.personalCenterController;
 
+import java.io.Console;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,15 +31,40 @@ public class PhotoWallController {
 	
 	private PhotoWall pw = new PhotoWall()  ;
 	
-	@RequestMapping(method=RequestMethod.GET)
-	public String photowall(HttpSession session) {
+	//删除按钮
+	@RequestMapping(value="delete",  method=RequestMethod.GET)
+	public String photoWallDelete(@RequestParam("src") String src, 
+			HttpServletRequest request,
+			HttpSession session) {
 		String username = (String) session.getAttribute("username");//获取用户名
-		//建立照片列表session
+		//获取照片墙的根路径
+		String sourcePath = request.getServletContext().getRealPath("\\");
+		//获取当前删除照片的部署路径
+		String pathDelete = sourcePath + src;
+		//删除文件
+		File f = new File(pathDelete);
+		f.delete();
+		//删除数据库记录
+		photoWallMapper.deleteRecordBySrc(src);
+		//刷新图片
 		List<PhotoWall> pwList = photoWallMapper.findRecordsByUsername(username);
 		session.setAttribute("pwList", pwList);
+		//刷新图片
+		
 		return "personalCenter/photoWall";
 	}
 	
+	@RequestMapping(method=RequestMethod.GET)
+	public String photoWall(HttpSession session) {
+		String username = (String) session.getAttribute("username");//获取用户名
+		//刷新图片
+		List<PhotoWall> pwList = photoWallMapper.findRecordsByUsername(username);
+		session.setAttribute("pwList", pwList);
+		//刷新图片
+		return "personalCenter/photoWall";
+	}
+	
+	//上传图片
 	@RequestMapping(method=RequestMethod.POST)
 	public String uploadPhoto(HttpSession session, HttpServletRequest request,
 			@RequestParam("photoWall") MultipartFile photo,

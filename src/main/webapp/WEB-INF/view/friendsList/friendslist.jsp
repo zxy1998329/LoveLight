@@ -1,6 +1,11 @@
+<%@page import="com.loveLight.entity.FriendsList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
+<%@page import="java.io.PrintWriter"%>
+<%
+	FriendsList friends = (FriendsList)request.getSession().getAttribute("friends");
+%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -160,30 +165,7 @@
 			      vDiv.style.display = (vDiv.style.display == 'none')?'block':'none';
 			    }
 				
-				function show(f1,f2,f3,f4,f5){
-					
-					if(session.getAttribute("f1")==null){
-						f1.style.display = 'block';
-					}
-					if(${sessionScope.f2!=null}){
-						f2.style.display = 'block';
-					}
-					if(${sessionScope.f3!=null}){
-						f3.style.display = 'block';
-					}
-					if(${sessionScope.f4!=null}){
-						f4.style.display = 'block';
-					}
-					if(${sessionScope.f5!=null}){
-						f5.style.display = 'block';
-					}
-						
-					/* f1.style.display = 'block';
-					f2.style.display = 'block';
-					f3.style.display = 'block';
-					f4.style.display = 'block';
-					f5.style.display = 'block'; */
-				}
+			
 			</script>
 		
 		<div id="main" style="width: 70%;">
@@ -193,27 +175,38 @@
 				<div>
 				<button style="margin-left:40%;margin-top:5%;font-size:18px;" onClick="show(f1,f2,f3,f4,f5)">好友列表</button>
 				</div>
-				<div id="f1" style="display:none">
-					<p style="margin-left:10%;font-size:18px;"> 好友1:${sessionScope.f1  }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
+				<c:if test="${sessionScope.f1!=null}">
+				 <div id="f1" >
+					<a href="/toRecent?index=1" style="margin-left:10%;font-size:18px;"> 好友1:${sessionScope.f1  }</a><a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
 				</div>
-				<div id="f2"style="display:none">
-					<p style="margin-left:10%;font-size:18px;"> 好友2:${sessionScope.f2 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
+				</c:if>
+				<c:if test="${sessionScope.f2!=null}">
+				<div id="f2">
+					<a href="/toRecent?index=2" style="margin-left:10%;font-size:18px;"> 好友2:${sessionScope.f2 }</a><a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
 				</div>
-				<div id="f3"style="display:none">
-					<p style="margin-left:10%;font-size:18px;"> 好友3:${sessionScope.f3 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
+				</c:if>
+				<c:if test="${sessionScope.f3!=null}">
+				<div id="f3">
+					<a href="/toRecent?index=3" style="margin-left:10%;font-size:18px;"> 好友3:${sessionScope.f3 }</a><a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
 				</div>
-				<div id="f4"style="display:none">
-					<p style="margin-left:10%;font-size:18px;"> 好友4:${sessionScope.f4 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
+				</c:if>
+				<c:if test="${sessionScope.f4!=null}">
+				<div id="f4">
+					<a href="/toRecent?index=4" style="margin-left:10%;font-size:18px;"> 好友4:${sessionScope.f4 }</a><a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
 				</div>
-				<div id="f5"style="display:none">
-					<p style="margin-left:10%;font-size:18px;"> 好友5:${sessionScope.f5 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
-				</div>
+				</c:if>
+				
+				<c:if test="${sessionScope.f5!=null}">
+				<div id="f5">
+					<a href="/toRecent?index=5" style="margin-left:10%;font-size:18px;"> 好友5:${sessionScope.f5 }</a>s<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
+				</div> 
+				</c:if>											
 			
 			</div>
 
 			<div id="left" style="display:inline-block;width: 30%;height: 700px;border: 2px;border-style: solid;float: left;">
 				<form action="/friendsinvite" method = "post" >
-				<button style="margin-left:10%;margin-top:5%;font-size:18px;" type="submit" class="submit_button" onclick="isHidden('haoyouyaoqing')">好友邀请</button>
+				<button style="margin-left:10%;margin-top:5%;font-size:18px;" type="submit" class="submit_button" >好友邀请</button>
 				<c:if test="${sessionScope.infoController==3 }">
 				<p> 添加好友成功！</p>
 				</c:if>	
@@ -221,6 +214,8 @@
 				<p> 您的好友已达上限！</p>
 				</c:if>	
 				</form>
+				
+				<c:if test="${sessionScope.invite1!=null }">
 				<p style="margin-left:10%;font-size:18px;"> 好友请求1:${sessionScope.invite1 }</p>
 				<form action="/allow1">
 				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">同意</button>
@@ -228,6 +223,9 @@
 				<form action="/refuse1">
 				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">拒绝</button>
 				</form>
+				</c:if>
+				
+				<c:if test="${sessionScope.invite2!=null }">
 				<p style="margin-left:10%;font-size:18px;"> 好友请求2:${sessionScope.invite2 }</p>
 				<form action="/allow2">
 				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">同意</button>
@@ -235,6 +233,9 @@
 				<form action="/refuse2">
 				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">拒绝</button>
 				</form>
+				</c:if>
+				
+				<c:if test="${sessionScope.invite3!=null }">
 				<p style="margin-left:10%;font-size:18px;"> 好友请求3:${sessionScope.invite3 }</p>
 				<form action="/allow3">
 				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">同意</button>
@@ -242,6 +243,8 @@
 				<form action="/refuse3">
 				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">拒绝</button>
 				</form>
+				</c:if>
+				
 			</div>
 		</div>
 
@@ -285,4 +288,5 @@
 <script src="assets/dist/scripts.min.js"></script>
 </body>
 </html>
+
 
