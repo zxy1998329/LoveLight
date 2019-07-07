@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -9,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>personal</title>
+<title>vipsuccess</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="" />
 <meta name="keywords" content="" />
@@ -50,8 +49,6 @@
 <!--[if lt IE 9]>
 <script src="assets/js/respond.min.js"></script>
 <![endif]-->
-
-
 
 </head>
 <body>
@@ -97,124 +94,71 @@
 	</header>
 
 	<!-- end:header-top -->
-	<div class="container"  style="background-image:url(assets/images/banner.jpg) ";>
-		<div class="animate-box" >
+
+
+
+	
+
+
+	<div id="fh5co-gallery">
+			<div class="container">
+				<div class="container" ;>
+		<div class="animate-box">
 			<div >
-					<%-- <form action = "/recharge" method = "post">
-						<button type="submit" class="submit_button">充值会员</button>
-						<c:if test="${sessionScope.reset==0 }">	
-							
-							<c:if test="${sessionScope.role==2 }">
-							<p>您已经是尊贵的VIP！</p>
-							</c:if>
-						</c:if>	
-						<h1>${sessionScope.role}</h1> --%>
+				<h3 align="center" style="margin-top: 50px;color: #EE2C2C;font-family: "Open Sans", Arial, sans-serif;">恭喜您已充值成功！</h3>
 				
-					<a href= "/recharge" style = "margin-top:30%;">开通"爱你一万年"豪华至尊VIP服务</a>
-<!-- 				<input id="Mybutton" style="margin-left:10%;margin-top:200px; background-color:#FF0000;"  type="button" value="快速开通会员" onclick="window.open('recent.html')"> -->
-			<br><br><br><br><br><br><br><br><br>
-				<c:if test="${sessionScope.role==1 }">
-						<form action = "/vipsuccess"  method = "post">
-							
-						</form>
-				</c:if>
-			
 			</div>
 		</div>
 	</div>
-
-
-
-
-		<div id="fh5co-gallery">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h2>service</h2>
-					</div>
+	
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+					<h2>welcome here!</h2>
 				</div>
+			</div>
 				
-				<a href="" style="font-size: 25px">更贴心-尊贵身份身份特权</a>
-				<br>
-				<br>
+			
 
 				<div class="row">
 					<div class="col-md-4">
 						<div class="gallery animate-box">
-							<a class="gallery-img image-popup image-popup" href="assets/images/vip.jpg"><img src="assets/images/vip.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+							<a class="gallery-img image-popup image-popup" href="images/boys1.jpg"><img src="images/boys1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 						</div>
 						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="assets/images/leave.jpg"><img src="assets/images/leave.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="assets/images/friends.jpg"><img src="assets/images/friends.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="assets/images/number.jpg"><img src="assets/images/number.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+							<a class="gallery-img image-popup" href="images/girls4.jpg"><img src="images/girls4.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="assets/images/search.jpg"><img src="assets/images/search.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+							<a class="gallery-img image-popup" href="images/girls5.jpg"><img src="images/girls5.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+						</div>
+						<div class="gallery animate-box">
+							<a class="gallery-img image-popup" href="images/girls3.jpg"><img src="images/girls3.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="gallery animate-box">
+							<a class="gallery-img image-popup" href="images/boys2.jpg"><img src="images/boys2.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
+						</div>
+						<div class="gallery animate-box">
+							<a class="gallery-img image-popup" href="images/girls6.jpg"><img src="images/girls6.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
 						</div>
 					</div>
 				</div>
 			
-				<a href="" style="font-size: 25px">更特别-独家特权</a>
-				<br>
-				<br>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup image-popup" href="assets/images/service.bmp"><img src="assets/images/service.bmp" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
-					</div>
-					
-				
-				</div>
-
-				<a href="" style="font-size: 25px">更丰富-礼品&游戏特权</a>
-				<br>
-				<br>
-
-				<div class="row">
-					<div class="col-md-4">
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup image-popup" href="assets/images/travel.jpg"><img src="assets/images/travel.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="assets/images/car.jpg"><img src="assets/images/car.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="gallery animate-box">
-							<a class="gallery-img image-popup" href="assets/images/game.jpg"><img src="assets/images/game.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a>
-						</div>
-					</div>
 				</div>
 
 			</div>
 		</div>
 		
 
-
-
-
-
-
-
-
 	
-	<footer>
+ 	<footer>
 	<div id="footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<h2>LoveLight</h2>
+					<h2>Jack &amp; Rose</h2>
 				</div>
 				<div class="col-md-6 col-md-offset-3 text-center">
 					<p class="fh5co-social-icons">
@@ -229,7 +173,7 @@
 			</div>
 		</div>
 	</div>
-</footer> 
+</footer>
 </div>
 <!-- END fh5co-page -->
 
@@ -243,8 +187,3 @@
 </body>
 </html>
 
-
-
-
-	
-	

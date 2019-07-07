@@ -22,21 +22,21 @@ public class FriendsManagementController {
 
 	@RequestMapping(value = "/friendslist1")
 	public String friendslist(HttpSession session ) {
-		session.setAttribute("infoController", -1);//-1 默认值  0申请失败  1申请成功 2添加失败  3添加成功
-		return "friendsList/friendslist";
-	}
-	
-	@RequestMapping(value = "/friendslist2")
-	public String friendslist2(HttpSession session ) {
-		FriendsList friendsList = friendsListService.findFriends((String)session.getAttribute("username"));
 		
+FriendsList friendsList = friendsListService.findFriends((String)session.getAttribute("username"));
+
 		session.setAttribute("f1", friendsList.getF1());
 		session.setAttribute("f2", friendsList.getF2());
 		session.setAttribute("f3", friendsList.getF3());
 		session.setAttribute("f4", friendsList.getF4());
+		System.out.println(session.getAttribute("f4"));
+		System.out.println(session.getAttribute("f4"));
 		session.setAttribute("f5", friendsList.getF5());
+		session.setAttribute("infoController", -1);//-1 默认值  0申请失败  1申请成功 2添加失败  3添加成功
 		return "friendsList/friendslist";
 	}
+	
+	
 	
 	@RequestMapping(value = "/friendsadd", method = RequestMethod.POST)
 	public String post(String username,HttpSession session ) {

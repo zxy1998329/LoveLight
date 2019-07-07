@@ -154,37 +154,61 @@
 		<br><br>
 		
 
-		<script>
+		<script type="text/javascript">
 				function isHidden(oDiv){
 			      var vDiv = document.getElementById(oDiv);
 			      vDiv.style.display = (vDiv.style.display == 'none')?'block':'none';
 			    }
+				
+				function show(f1,f2,f3,f4,f5){
+					
+					if(session.getAttribute("f1")==null){
+						f1.style.display = 'block';
+					}
+					if(${sessionScope.f2!=null}){
+						f2.style.display = 'block';
+					}
+					if(${sessionScope.f3!=null}){
+						f3.style.display = 'block';
+					}
+					if(${sessionScope.f4!=null}){
+						f4.style.display = 'block';
+					}
+					if(${sessionScope.f5!=null}){
+						f5.style.display = 'block';
+					}
+						
+					/* f1.style.display = 'block';
+					f2.style.display = 'block';
+					f3.style.display = 'block';
+					f4.style.display = 'block';
+					f5.style.display = 'block'; */
+				}
 			</script>
 		
 		<div id="main" style="width: 70%;">
 			
 		
 			<div id="right" style="display:inline-block;height: 700px;border: 2px;border-style: solid;width: 70%;float: left;">
-				<form action="/friendslist2" >
-				<button style="margin-left:40%;margin-top:5%;font-size:18px;" type="submit" class="submit_button" onclick="isHidden('haoyouyaoqing')">好友列表</button>
-				</form>
-				<form action="/allow1">
-					<p style="margin-left:10%;font-size:18px;"> 好友1:${sessionScope.f1 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
-				</form>
-				<form action="/allow1">
+				<div>
+				<button style="margin-left:40%;margin-top:5%;font-size:18px;" onClick="show(f1,f2,f3,f4,f5)">好友列表</button>
+				</div>
+				<div id="f1" style="display:none">
+					<p style="margin-left:10%;font-size:18px;"> 好友1:${sessionScope.f1  }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
+				</div>
+				<div id="f2"style="display:none">
 					<p style="margin-left:10%;font-size:18px;"> 好友2:${sessionScope.f2 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
-				</form>
-				<form action="/allow1">
+				</div>
+				<div id="f3"style="display:none">
 					<p style="margin-left:10%;font-size:18px;"> 好友3:${sessionScope.f3 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
-				</form>
-							<form action="/allow1">
+				</div>
+				<div id="f4"style="display:none">
 					<p style="margin-left:10%;font-size:18px;"> 好友4:${sessionScope.f4 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
-				</form>
-				<form action="/allow1">
+				</div>
+				<div id="f5"style="display:none">
 					<p style="margin-left:10%;font-size:18px;"> 好友5:${sessionScope.f5 }<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a></p>
-				</form>
+				</div>
 			
-
 			</div>
 
 			<div id="left" style="display:inline-block;width: 30%;height: 700px;border: 2px;border-style: solid;float: left;">

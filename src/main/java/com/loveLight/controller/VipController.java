@@ -19,7 +19,7 @@ public class VipController {
 	private VipService vipService;
 	private AccountMapper accountMapper;
 	
-	@RequestMapping(value = "/vipcenter", method = RequestMethod.POST)
+	@RequestMapping(value = "/vipcenter")
 	public String vipCenter() {
 		return "VIP";
 	}
@@ -37,7 +37,7 @@ public class VipController {
 		
 		Account account1 = vipService.getAccount(username);
 		System.out.println(account1);
-		if(account1.getRole()==1) { //判断用户权限
+		if(account1.getRole()==1) { //判断用户权限 0 未实名 1非会员 2会员
 			session.setAttribute("role", 1);
 			
 			vipService.recharge(username);
@@ -57,5 +57,10 @@ public class VipController {
 		return "homePage";
 		
 		
+	}
+	
+	@RequestMapping(value = "/vipsuccess", method = RequestMethod.GET)
+	public String vipsuccess() {
+		return "vipsuccess";
 	}
 }
