@@ -41,7 +41,7 @@
 <!-- Magnific Popup -->
 <link rel="stylesheet" href="/assets/css/magnific-popup.css">
 
-<link rel="stylesheet" href="/assets/css/style1.css">
+<link rel="stylesheet" href="/assets/css/style.css">
 
 
 <!-- Modernizr JS -->
