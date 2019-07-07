@@ -51,6 +51,13 @@ public class MatchServiceImpl implements MatchService {
 		}
 		li = accountMapper.findByHigh(a, b,  account.getSex());
 		//返回结果
+		list.addAll(li);
+		li.clear();
+		for (Account account2 : list) {
+			if(account2.getUsername().equals(username)) {
+				list.remove(account2);
+			}
+		}
 		return list;
 	}
 	

@@ -96,6 +96,6 @@ public class liuyanController {
 		username = (String) session.getAttribute("beiliuyanren");
 		liuyanren = (String) session.getAttribute("username");
 		int i = liuYanService.insertLiuYan(username, liuyanren,liuyan);
-		return "liuyan";
+		return "recent1";
 	}
 }

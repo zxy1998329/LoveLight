@@ -89,7 +89,7 @@
 								<li><a href="/extendInfo">个人拓展资料</a></li>
 								<li><a href="realNameAuthentication.html">实名认证</a></li>
 								<li><a href="/photoWall">照片墙</a></li>
-								<li><a href="recent.html">动态</a></li>
+								<li><a href="toPersonal">动态</a></li>
 							</ul>
 						</li>
 						<li><a href="indexLogin.html" style="font-size:15px;">登录/注册</a></li>
