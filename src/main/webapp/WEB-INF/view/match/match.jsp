@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page import="java.io.PrintWriter"%>
+<%@page import="java.util.Date"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -114,7 +115,12 @@
 					<c:forEach var="account" items="${result }">
 						<div class="col-md-3 text-center animate-box">
 							<div class="groom-men">
-								<img src="http://localhost:8080/assets/images/groom-men-1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+<!-- 								<img src="http://localhost:8080/assets/images/groom-men-1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"> -->
+									<img src="/pictures/head/${account.username }.jpg?t=<%=new Date().getTime() %>" ${account.sex eq "M" ? "onerror=\"this.src='/pictures/head/defultM.jpg'\""
+						 : "onerror=\"this.src='/pictures/head/defultF.jpg'\""
+									} class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+ 
+									
 									<h3>昵称：<c:out value="${account.username }"></c:out></h3>
 									<h3>地区：<c:out value="${account.area}"></c:out>&nbsp;&nbsp;身高：<c:out value="${account.high }"></c:out>
 									<c:if test="${account.accountExtend.salary!=null}">

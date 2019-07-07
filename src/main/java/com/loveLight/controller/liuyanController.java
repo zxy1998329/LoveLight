@@ -27,12 +27,22 @@ public class liuyanController {
 	@Autowired
 	private LiuYanService liuYanService;
 	
-	@RequestMapping(value="/totest",method=RequestMethod.GET)
+	@RequestMapping(value="/tofriend",method=RequestMethod.GET)
 	String test(HttpSession session) {
 		String username = (String) session.getAttribute("username");
 		FriendsList friendsList = friendListService.searchFriend(username);
 		session.setAttribute("friends", friendsList);
-		return "friend";//跳到好友显示画面，显示好友列表
+		return "friendsList/friendslist";//跳到好友显示画面，显示好友列表
+	}
+	
+	@RequestMapping(value="/toPersonal",method=RequestMethod.GET)
+	String toPersonal(HttpSession session,Model model) {
+		String beiliuyanren = (String) session.getAttribute("username");
+		List<LiuYan> list = liuYanService.search(beiliuyanren);
+		//查找留言数据库，放在model里面，
+		model.addAttribute("list",list);
+	
+		return "personalCenter/recent";
 	}
 	
 	@RequestMapping(value="/toRecent",method=RequestMethod.GET)
