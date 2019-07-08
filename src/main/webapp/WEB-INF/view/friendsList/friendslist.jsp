@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%@page import="com.loveLight.entity.FriendsList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -60,6 +59,55 @@
 
 <!--上传图片-->
 <style type="text/css">
+
+	.login-button { /* 按钮美化 */
+		width: 100px; /* 宽度 */
+		height: 40px; /* 高度 */
+		border-width: 0px; /* 边框宽度 */
+		border-radius: 3px; /* 边框半径 */
+		background: #1E90FF; /* 背景颜色 */
+		cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+		outline: none; /* 不显示轮廓线 */
+		font-family: Microsoft YaHei; /* 设置字体 */
+		color: white; /* 字体颜色 */
+		font-size: 17px; /* 字体大小 */
+	}
+	.login-button:hover { /* 鼠标移入按钮范围时改变颜色 */
+		background: #5599FF;
+	}
+
+	.tongyi-button { /* 按钮美化 */
+		width: 100px; /* 宽度 */
+		height: 40px; /* 高度 */
+		border-width: 0px; /* 边框宽度 */
+		border-radius: 3px; /* 边框半径 */
+		background: #6495ED; /* 背景颜色 */
+		cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+		outline: none; /* 不显示轮廓线 */
+		font-family: Microsoft YaHei; /* 设置字体 */
+		color: white; /* 字体颜色 */
+		font-size: 17px; /* 字体大小 */
+	}
+	.tongyi-button:hover { /* 鼠标移入按钮范围时改变颜色 */
+		background: #5599FF;
+	}
+
+	.jujue-button { /* 按钮美化 */
+		width: 100px; /* 宽度 */
+		height: 40px; /* 高度 */
+		border-width: 0px; /* 边框宽度 */
+		border-radius: 3px; /* 边框半径 */
+		background: #CD3333; /* 背景颜色 */
+		cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+		outline: none; /* 不显示轮廓线 */
+		font-family: Microsoft YaHei; /* 设置字体 */
+		color: white; /* 字体颜色 */
+		font-size: 17px; /* 字体大小 */
+	}
+	.jujue-button:hover { /* 鼠标移入按钮范围时改变颜色 */
+		background: #CD5B45;
+	}
+	
 	.con4 {
 		width: 300px;
 		height: auto;
@@ -154,8 +202,15 @@
 		<br><br>
 		<h3 style="margin-top: 50px;color: #848484;font-size:36px;font-family: "Open Sans", Arial, sans-serif;">添加好友</h3>
 		<form action="/friendsadd" method = "post">
+		<c:if test="${sessionScope.infoController==0 }">
+				<p> 申请失败！</p>
+		</c:if>
+		<c:if test="${sessionScope.infoController==1 }">
+				<p> 申请成功！</p>
+		</c:if>
 			<input style="margin-left:10%;margin-top:5%;font-size:18px;" type="text" name="username" class="username" placeholder="请输入需要添加的好友名！">
-			<button  style="margin-left:10%;margin-top:5%;font-size:18px;" type="submit" class="disp">添加好友</button>
+			<button  style="margin-left:10%;margin-top:5%;font-size:18px;" type="submit" class="login-button">添加好友</button>
+			
 		</form>
 		<br><br>
 		
@@ -173,33 +228,33 @@
 			
 		
 			<div id="right" style="display:inline-block;height: 700px;border: 2px;border-style: solid;width: 70%;float: left;">
-				<div>
-				<button style="margin-left:40%;margin-top:5%;font-size:18px;" onClick="show(f1,f2,f3,f4,f5)">好友列表</button>
-				</div>
+				<form action ="/friendslist1">
+				<button style="margin-left:40%;margin-top:5%;font-size:18px;" type="submit" class="login-button" >好友列表</button>
+				</form>
 				<c:if test="${sessionScope.f1!=null}">
 				 <div id="f1" >
-					<a href="/toRecent?index=1" style="margin-left:10%;font-size:18px;"> 好友1:${sessionScope.f1  }</a><a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
+					<a href="/toRecent?index=1" style="margin-left:10%;font-size:18px;color:black;"> 好友1:${sessionScope.f1  }</a>  <a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
 				</div>
 				</c:if>
 				<c:if test="${sessionScope.f2!=null}">
 				<div id="f2">
-					<a href="/toRecent?index=2" style="margin-left:10%;font-size:18px;"> 好友2:${sessionScope.f2 }</a><a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
+					<a href="/toRecent?index=2" style="margin-left:10%;font-size:18px;color:black;"> 好友2:${sessionScope.f2 }</a>  <a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
 				</div>
 				</c:if>
 				<c:if test="${sessionScope.f3!=null}">
 				<div id="f3">
-					<a href="/toRecent?index=3" style="margin-left:10%;font-size:18px;"> 好友3:${sessionScope.f3 }</a><a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
+					<a href="/toRecent?index=3" style="margin-left:10%;font-size:18px;color:black;"> 好友3:${sessionScope.f3 }</a>  <a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
 				</div>
 				</c:if>
 				<c:if test="${sessionScope.f4!=null}">
 				<div id="f4">
-					<a href="/toRecent?index=4" style="margin-left:10%;font-size:18px;"> 好友4:${sessionScope.f4 }</a><a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
+					<a href="/toRecent?index=4" style="margin-left:10%;font-size:18px;color:black;"> 好友4:${sessionScope.f4 }</a>  <a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
 				</div>
 				</c:if>
 				
 				<c:if test="${sessionScope.f5!=null}">
 				<div id="f5">
-					<a href="/toRecent?index=5" style="margin-left:10%;font-size:18px;"> 好友5:${sessionScope.f5 }</a>s<a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
+					<a href="/toRecent?index=5" style="margin-left:10%;font-size:18px;color:black;"> 好友5:${sessionScope.f5 }</a>  <a href="">ta的照片墙</a>&nbsp<a href="">ta的留言板</a>
 				</div> 
 				</c:if>											
 			
@@ -207,42 +262,45 @@
 
 			<div id="left" style="display:inline-block;width: 30%;height: 700px;border: 2px;border-style: solid;float: left;">
 				<form action="/friendsinvite" method = "post" >
-				<button style="margin-left:10%;margin-top:5%;font-size:18px;" type="submit" class="submit_button" >好友邀请</button>
+				<button style="margin-left:10%;margin-top:5%;font-size:18px;" type="submit" class="login-button" >好友邀请</button>
 				<c:if test="${sessionScope.infoController==3 }">
 				<p> 添加好友成功！</p>
 				</c:if>	
 				<c:if test="${sessionScope.infoController==2 }">
 				<p> 您的好友已达上限！</p>
 				</c:if>	
+				<c:if test="${sessionScope.infoController==4 }">
+				<p> 您已拒绝对方的好友申请！</p>
+				</c:if>
 				</form>
 				
 				<c:if test="${sessionScope.invite1!=null }">
 				<p style="margin-left:10%;font-size:18px;"> 好友请求1:${sessionScope.invite1 }</p>
 				<form action="/allow1">
-				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">同意</button>
+				<button type="submit" class="login-button" style="margin-left:10%;font-size:18px;">同意</button>
 				</form>
 				<form action="/refuse1">
-				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">拒绝</button>
+				<button type="submit" class="login-button" style="margin-left:10%;font-size:18px;">拒绝</button>
 				</form>
 				</c:if>
 				
 				<c:if test="${sessionScope.invite2!=null }">
 				<p style="margin-left:10%;font-size:18px;"> 好友请求2:${sessionScope.invite2 }</p>
 				<form action="/allow2">
-				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">同意</button>
+				<button type="submit" class="login-button" style="margin-left:10%;font-size:18px;">同意</button>
 				</form>
 				<form action="/refuse2">
-				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">拒绝</button>
+				<button type="submit" class="login-button" style="margin-left:10%;font-size:18px;">拒绝</button>
 				</form>
 				</c:if>
 				
 				<c:if test="${sessionScope.invite3!=null }">
 				<p style="margin-left:10%;font-size:18px;"> 好友请求3:${sessionScope.invite3 }</p>
 				<form action="/allow3">
-				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">同意</button>
+				<button type="submit" class="login-button" style="margin-left:10%;font-size:18px;">同意</button>
 				</form>
 				<form action="/refuse3">
-				<button type="submit" class="submit_button" style="margin-left:10%;font-size:18px;">拒绝</button>
+				<button type="submit" class="login-button" style="margin-left:10%;font-size:18px;">拒绝</button>
 				</form>
 				</c:if>
 				

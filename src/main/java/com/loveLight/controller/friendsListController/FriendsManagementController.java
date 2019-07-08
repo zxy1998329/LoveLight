@@ -29,7 +29,7 @@ public class FriendsManagementController {
 		session.setAttribute("f3", friendsList.getF3());
 		session.setAttribute("f4", friendsList.getF4());
 		session.setAttribute("f5", friendsList.getF5());
-		session.setAttribute("infoController", -1);// -1 默认值 0申请失败 1申请成功 2添加失败 3添加成功
+		session.setAttribute("infoController", -1);// -1 默认值 0申请失败 1申请成功 2添加失败(上限) 3添加成功4添加失败（拒绝）
 		return "friendsList/friendslist";
 	}
 
@@ -140,7 +140,7 @@ public class FriendsManagementController {
 		friendsList.setfInvi1(null);
 		friendsListMapper.insetInvite(friendsList);
 		session.setAttribute("invite1", null);
-		session.setAttribute("infoController", 2);
+		session.setAttribute("infoController", 4);
 		return "friendsList/friendslist";
 	}
 
@@ -172,7 +172,7 @@ public class FriendsManagementController {
 		friendsList.setfInvi2(null);
 		friendsListMapper.insetInvite(friendsList);
 		session.setAttribute("invite2", null);
-		session.setAttribute("infoController", 2);
+		session.setAttribute("infoController", 4);
 		return "friendsList/friendslist";
 	}
 
@@ -205,7 +205,7 @@ public class FriendsManagementController {
 		friendsList.setfInvi3(null);
 		friendsListMapper.insetInvite(friendsList);
 		session.setAttribute("invite3", null);
-		session.setAttribute("infoController", 2);
+		session.setAttribute("infoController", 4);
 		return "friendsList/friendslist";
 	}
 }
