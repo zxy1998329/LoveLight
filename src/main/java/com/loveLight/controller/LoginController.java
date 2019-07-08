@@ -30,11 +30,12 @@ public class LoginController {
 		
 		if(row1!=null) {
 			session.setAttribute("username", row1);
-
+			session.setAttribute("loginf", 0);
 			session.setAttribute("reset", 1);
 			return "redirect:index.jsp";
 		}
 		else {
+			session.setAttribute("loginf", 1);
 			return "redirect:indexLogin.jsp";
 		}
 		

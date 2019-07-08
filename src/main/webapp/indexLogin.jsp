@@ -1,5 +1,6 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
@@ -43,7 +44,7 @@
 
             
             <form action="/login" method="post">
-                <input type="text" name="username" style="width: 70%;" class="username" placeholder="请输入您的用户名！">
+                <input type="text" name="username" style="width: 70%;" class="username" placeholder="请输入您的用户名！"><c:if test="${sessionScope.loginf==1 }">账号或密码错误</c:if>
                 <input type="password" name="password" style="width: 70%;" class="password" placeholder="请输入您的用户密码！">
 <!--                  <input type="combobox" class="combobox" name="combobox" class="combobox" placeholder="请输入验证码！">  -->
                 <button type="submit" style="width: 80%;" class="submit_button">登录</button>
